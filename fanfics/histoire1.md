@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/gh/oscarmorrison/md-page/md-page.js"></script><noscript>Activez JavaScript pour voir cette page correctement.</noscript>
+
 # Le retour du sorcier 🔮
 
 **Auteur : Philippe**  
