@@ -1,6 +1,4 @@
-
-<head>
-  <meta # Le retour du sorcier 🔮
+# Le retour du sorcier 🔮
 
 **Auteur : Philippe**  
 *Publié le 8 septembre 2025*
