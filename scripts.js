@@ -7,4 +7,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-<a href="fanfics/histoire1.html">Lire : Le retour du sorcier</a>
