@@ -17,3 +17,29 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fdf6f0;
+  color: #2c2c2c;
+  margin: 0;
+  padding: 20px;
+}
+
+header, footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  color: #8b0000;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 3px solid #8b0000;
+  padding-left: 10px;
+  margin: 20px 0;
+}
