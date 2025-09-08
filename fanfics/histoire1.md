@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ksos 5.0 : Meurtre en Haute-Savoie
+title: Ksos 5.0 - Meurtre en Haute-Savoie
 ---
 
 # Le retour du sorcier 🔮
