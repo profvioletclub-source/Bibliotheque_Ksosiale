@@ -49,6 +49,7 @@ if (signupBtn && loginBtn && logoutBtn) {
       if (userInfo) {
         userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
       }
+      loadFavorites(); // 🔄 Charge les favoris à la connexion
     } else {
       logoutBtn.style.display = "none";
       signupBtn.style.display = "inline-block";
@@ -99,11 +100,21 @@ if (searchButton) {
     });
   });
 }
+
+// 🔖 Ajout aux favoris
 const favButtons = document.querySelectorAll(".fav-btn");
 
 favButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    const storyId = btn.dataset.id;
+    const card = btn.closest(".fic-card");
+    const story = {
+      title: card.dataset.title,
+      author: card.dataset.author,
+      date: card.dataset.date,
+      type: card.dataset.type,
+      link: card.querySelector("a").getAttribute("href")
+    };
+
     const user = auth.currentUser;
     if (!user) {
       alert("Connecte-toi pour ajouter aux favoris !");
@@ -113,9 +124,8 @@ favButtons.forEach(btn => {
     const key = `favorites_${user.uid}`;
     const existing = JSON.parse(localStorage.getItem(key)) || [];
 
-    // Évite les doublons
-    if (!existing.includes(storyId)) {
-      existing.unshift(storyId); // Ajoute en haut (plus récent)
+    if (!existing.some(f => f.link === story.link)) {
+      existing.unshift(story); // Ajoute en haut
       localStorage.setItem(key, JSON.stringify(existing));
       alert("Ajouté aux favoris !");
     } else {
@@ -123,6 +133,8 @@ favButtons.forEach(btn => {
     }
   });
 });
+
+// 📚 Affichage des favoris
 function loadFavorites() {
   const user = auth.currentUser;
   if (!user) return;
@@ -135,15 +147,22 @@ function loadFavorites() {
 
   list.innerHTML = "";
 
-  favorites.forEach(id => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${id}">${id}</a>`;
-    list.appendChild(li);
+  favorites.forEach(fav => {
+    const card = document.createElement("div");
+    card.className = "fic-card";
+    card.dataset.title = fav.title;
+    card.dataset.author = fav.author;
+    card.dataset.date = fav.date;
+    card.dataset.type = fav.type;
+
+    card.innerHTML = `
+      <h3>${fav.title}</h3>
+      <p><strong>Auteur :</strong> ${fav.author}</p>
+      <p><strong>Date :</strong> ${fav.date}</p>
+      <p><strong>Type :</strong> ${fav.type}</p>
+      <a href="${fav.link}">Lire le texte</a>
+    `;
+
+    list.appendChild(card);
   });
 }
-
-onAuthStateChanged(auth, user => {
-  if (user) {
-    loadFavorites();
-  }
-});
