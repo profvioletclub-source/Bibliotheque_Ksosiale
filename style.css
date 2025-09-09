@@ -128,3 +128,16 @@ button:hover {
 .fav-btn:hover {
   color: #8b0000;
 }
+.favorites-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.favorites-zone .fic-card {
+  border: 1px solid #aaa;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
