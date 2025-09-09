@@ -154,6 +154,23 @@ function refreshFavButtons() {
   });
 }
 
+function updateFavButtonState() {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const key = `favorites_${user.uid}`;
+  const favorites = JSON.parse(localStorage.getItem(key)) || [];
+
+  favButtons.forEach(btn => {
+    const card = btn.closest(".fic-card");
+    const link = card.querySelector("a")?.getAttribute("href");
+    const isFavorited = favorites.some(f => f.link === link);
+
+    btn.classList.toggle("favorited", isFavorited);
+    btn.title = isFavorited ? "Retirer des favoris" : "Ajouter aux favoris";
+  });
+}
+
 refreshFavButtons();
 
 // 📚 Affichage des favoris
