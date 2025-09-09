@@ -92,27 +92,16 @@ const searchButton = document.getElementById("search-button");
 
 if (searchButton) {
   searchButton.addEventListener("click", () => {
-    const title = searchBar?.value.toLowerCase() || "";
-    const author = searchAuthor?.value.toLowerCase() || "";
-    const date = searchDate?.value || "";
-    const type = searchType?.value || "";
+    const query = {
+    title: searchBar?.value || "",
+    author: searchAuthor?.value || "",
+    date: searchDate?.value || "",
+    type: searchType?.value || ""
+  };
 
-    cards.forEach(card => {
-      const cardTitle = card.dataset.title.toLowerCase();
-      const cardAuthor = card.dataset.author.toLowerCase();
-      const cardDate = card.dataset.date;
-      const cardType = card.dataset.type;
-
-      const match =
-        (!title || cardTitle.includes(title)) &&
-        (!author || cardAuthor.includes(author)) &&
-        (!date || cardDate === date) &&
-        (!type || cardType === type);
-
-      card.style.display = match ? "block" : "none";
-    });
-  });
-}
+  localStorage.setItem("ksos_search", JSON.stringify(query));
+  window.location.href = "recherche.html";
+});
 
 // 🔖 Ajout ou retrait des favoris + mise à jour visuelle
 let favButtons = [];
