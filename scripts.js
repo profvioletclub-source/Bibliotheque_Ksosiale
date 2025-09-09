@@ -123,3 +123,27 @@ favButtons.forEach(btn => {
     }
   });
 });
+function loadFavorites() {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const key = `favorites_${user.uid}`;
+  const favorites = JSON.parse(localStorage.getItem(key)) || [];
+
+  const list = document.getElementById("favorites-list");
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  favorites.forEach(id => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${id}">${id}</a>`;
+    list.appendChild(li);
+  });
+}
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    loadFavorites();
+  }
+});
