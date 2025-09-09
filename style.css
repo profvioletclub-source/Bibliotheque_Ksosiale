@@ -56,3 +56,6 @@ blockquote {
   margin: 10px 0;
   background-color: #fff;
 }
+ol {
+  list-style-type: decimal; /* 1, 2, 3... */
+}
