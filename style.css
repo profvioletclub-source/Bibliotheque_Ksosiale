@@ -1,7 +1,14 @@
+:root {
+  --color-bg: #fdf6f0;
+  --color-text: #2c2c2c;
+  --color-accent: #8b0000;
+  --color-link: #0077cc;
+  --color-card: #fff;
+}
 body {
   font-family: 'Georgia', serif;
-  background-color: #fdf6f0;
-  color: #2c2c2c;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   padding: 20px;
 }
@@ -11,20 +18,21 @@ header, footer {
   text-align: center;
   padding: 10px;
 }
-
 h1 {
-  color: #8b0000;
+  color: var(--color-accent);
 }
-
+h2 {
+  color: #444;
+  margin-top: 20px;
+  font-size: 1.4em;
+}
 a {
-  color: #0077cc;
+  color: var(--color-link);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 blockquote {
   font-style: italic;
   color: #555;
@@ -36,25 +44,22 @@ blockquote {
   margin-bottom: 20px;
   text-align: center;
 }
-
 #search-section input, #search-section select {
   margin: 5px;
   padding: 8px;
   font-size: 1em;
 }
-
 .category {
   border: 2px solid #ccc;
   padding: 15px;
   margin: 20px 0;
   background-color: #fdf6f0;
 }
-
 .fic-card {
   border: 1px solid #aaa;
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff;
+  background-color: var(--color-card);
 }
 ol {
   list-style-type: decimal; /* 1, 2, 3... */
@@ -97,4 +102,19 @@ button:hover {
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  #search-section input,
+  #search-section select {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
