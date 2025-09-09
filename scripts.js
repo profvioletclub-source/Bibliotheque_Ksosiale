@@ -122,3 +122,16 @@ function loadFavorites() {
   });
   refreshFavButtons();
 }
+
+window.addEventListener("load", () => {
+  const popup = document.getElementById("popup-overlay");
+  const closeBtn = document.getElementById("close-popup");
+
+  if (popup && closeBtn) {
+    popup.style.display = "flex";
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  }
+});
+
