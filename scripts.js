@@ -107,12 +107,14 @@ const favButtons = document.querySelectorAll(".fav-btn");
 favButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const card = btn.closest(".fic-card");
+    if (!card) return;
+
     const story = {
-      title: card.dataset.title,
-      author: card.dataset.author,
-      date: card.dataset.date,
-      type: card.dataset.type,
-      link: card.querySelector("a").getAttribute("href")
+      title: card.dataset.title || card.querySelector("h3")?.textContent || "Titre inconnu",
+      author: card.dataset.author || "Auteur inconnu",
+      date: card.dataset.date || "Date inconnue",
+      type: card.dataset.type || "Type inconnu",
+      link: card.querySelector("a")?.getAttribute("href") || "#"
     };
 
     const user = auth.currentUser;
@@ -125,7 +127,7 @@ favButtons.forEach(btn => {
     const existing = JSON.parse(localStorage.getItem(key)) || [];
 
     if (!existing.some(f => f.link === story.link)) {
-      existing.unshift(story); // Ajoute en haut
+      existing.unshift(story);
       localStorage.setItem(key, JSON.stringify(existing));
       alert("Ajouté aux favoris !");
     } else {
