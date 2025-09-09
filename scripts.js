@@ -22,34 +22,58 @@ const passwordInput = document.getElementById("password");
 const signupBtn = document.getElementById("signup");
 const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
+const userInfo = document.getElementById("user-info");
 
-signupBtn.addEventListener("click", () => {
-  createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-    .then(() => alert("Compte créé !"))
-    .catch(error => alert(error.message));
-});
+if (signupBtn && loginBtn && logoutBtn) {
+  signupBtn.addEventListener("click", () => {
+    createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+      .then(() => alert("Compte créé !"))
+      .catch(error => alert(error.message));
+  });
 
-loginBtn.addEventListener("click", () => {
-  signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-    .then(() => alert("Connecté !"))
-    .catch(error => alert(error.message));
-});
+  loginBtn.addEventListener("click", () => {
+    signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+      .then(() => alert("Connecté !"))
+      .catch(error => alert(error.message));
+  });
 
-logoutBtn.addEventListener("click", () => {
-  signOut(auth).then(() => alert("Déconnecté !"));
-});
+  logoutBtn.addEventListener("click", () => {
+    signOut(auth).then(() => alert("Déconnecté !"));
+  });
 
-onAuthStateChanged(auth, user => {
-  if (user) {
-    logoutBtn.style.display = "inline-block";
-    signupBtn.style.display = "none";
-    loginBtn.style.display = "none";
-  } else {
-    logoutBtn.style.display = "none";
-    signupBtn.style.display = "inline-block";
-    loginBtn.style.display = "inline-block";
-  }
-});
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      logoutBtn.style.display = "inline-block";
+      signupBtn.style.display = "none";
+      loginBtn.style.display = "none";
+      if (userInfo) {
+        userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
+      }
+    } else {
+      logoutBtn.style.display = "none";
+      signupBtn.style.display = "inline-block";
+      loginBtn.style.display = "inline-block";
+      if (userInfo) {
+        userInfo.innerHTML = "";
+      }
+    }
+  });
+}
+
+// 👤 Interface utilisateur modale
+const userAccessBtn = document.getElementById("user-access");
+const userModal = document.getElementById("user-modal");
+const closeModal = document.getElementById("close-modal");
+
+if (userAccessBtn && userModal && closeModal) {
+  userAccessBtn.addEventListener("click", () => {
+    userModal.style.display = "flex";
+  });
+
+  closeModal.addEventListener("click", () => {
+    userModal.style.display = "none";
+  });
+}
 
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
@@ -67,50 +91,26 @@ const searchDate = document.getElementById("search-date");
 const searchType = document.getElementById("search-type");
 const searchButton = document.getElementById("search-button");
 
-searchButton.addEventListener("click", () => {
-  const title = searchBar.value.toLowerCase();
-  const author = searchAuthor.value.toLowerCase();
-  const date = searchDate.value;
-  const type = searchType.value;
+if (searchButton) {
+  searchButton.addEventListener("click", () => {
+    const title = searchBar?.value.toLowerCase() || "";
+    const author = searchAuthor?.value.toLowerCase() || "";
+    const date = searchDate?.value || "";
+    const type = searchType?.value || "";
 
-  cards.forEach(card => {
-    const cardTitle = card.dataset.title.toLowerCase();
-    const cardAuthor = card.dataset.author.toLowerCase();
-    const cardDate = card.dataset.date;
-    const cardType = card.dataset.type;
+    cards.forEach(card => {
+      const cardTitle = card.dataset.title.toLowerCase();
+      const cardAuthor = card.dataset.author.toLowerCase();
+      const cardDate = card.dataset.date;
+      const cardType = card.dataset.type;
 
-    const match =
-      (!title || cardTitle.includes(title)) &&
-      (!author || cardAuthor.includes(author)) &&
-      (!date || cardDate === date) &&
-      (!type || cardType === type);
+      const match =
+        (!title || cardTitle.includes(title)) &&
+        (!author || cardAuthor.includes(author)) &&
+        (!date || cardDate === date) &&
+        (!type || cardType === type);
 
-    card.style.display = match ? "block" : "none";
+      card.style.display = match ? "block" : "none";
+    });
   });
-});
-const userAccessBtn = document.getElementById("user-access");
-const userModal = document.getElementById("user-modal");
-const closeModal = document.getElementById("close-modal");
-const userInfo = document.getElementById("user-info");
-
-userAccessBtn.addEventListener("click", () => {
-  userModal.style.display = "flex";
-});
-
-closeModal.addEventListener("click", () => {
-  userModal.style.display = "none";
-});
-
-onAuthStateChanged(auth, user => {
-  if (user) {
-    logoutBtn.style.display = "inline-block";
-    signupBtn.style.display = "none";
-    loginBtn.style.display = "none";
-    userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
-  } else {
-    logoutBtn.style.display = "none";
-    signupBtn.style.display = "inline-block";
-    loginBtn.style.display = "inline-block";
-    userInfo.innerHTML = "";
-  }
-});
+}
