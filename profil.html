@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Mon Espace Ksos</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>👤 Mon Espace Ksos</h1>
-    <a href="index.html">← Retour à l’accueil</a>
-  </header>
+  <head>  
+    <meta charset="UTF-8">
+    <title>Mon Espace Ksos</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>👤 Mon Espace Ksos</h1>
+      <a href="index.html">← Retour à l’accueil</a>
+    </header>
+    <main>
+      <section id="auth-section">
+        <h2>Connexion / Inscription</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button id="signup">Créer un compte</button>
+        <button id="login">Se connecter</button>
+        <button id="logout" style="display:none;">Se déconnecter</button>
+        <div id="user-info" style="margin-top:10px;"></div>
+      </section>
+          
+      <section id="favorites-section">
+        <h2>📚 Mes favoris</h2>
+        <ul id="favorites-list"></ul>
+      </section>
+    </main>
 
-  <main>
-    <section id="auth-section">
-      <h2>Connexion / Inscription</h2>
-      <input type="email" id="email" placeholder="Email">
-      <input type="password" id="password" placeholder="Mot de passe">
-      <button id="signup">Créer un compte</button>
-      <button id="login">Se connecter</button>
-      <button id="logout" style="display:none;">Se déconnecter</button>
-      <div id="user-info" style="margin-top:10px;"></div>
-    </section>
+    <footer>
+      <p>© Ksos - Tous droits réservés</p>
+    </footer>
 
-    <section id="favorites-section">
-      <h2>📚 Mes favoris</h2>
-      <ul id="favorites-list"></ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>© Ksos - Tous droits réservés</p>
-  </footer>
-
-  <script type="module" src="scripts.js"></script>
-</body>
+    <script type="module" src="scripts.js"></script>
+  </body>
 </html>
