@@ -163,3 +163,14 @@ button:hover {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  float: right;
+  margin-top: -30px;
+}
+.fav-btn:hover {
+  color: #8b0000;
+}
