@@ -141,3 +141,25 @@ button:hover {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+#favorites-section {
+  margin-top: 30px;
+}
+
+#favorites-section h2 {
+  color: #8b0000;
+  text-align: center;
+}
+
+#favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#favorites-list .fic-card {
+  border: 1px solid #aaa;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
