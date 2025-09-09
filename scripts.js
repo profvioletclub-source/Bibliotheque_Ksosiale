@@ -58,6 +58,22 @@ onAuthStateChanged(auth, user => {
       userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
     }
 
+    updateFavButtonState(); // ✅
+
+    if (document.getElementById("favorites-list")) {
+      loadFavorites();
+    }
+  } else {
+    if (logoutBtn) logoutBtn.style.display = "none";
+    if (signupBtn) signupBtn.style.display = "inline-block";
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (userInfo) {
+      userInfo.innerHTML = "";
+    }
+  }
+});
+
+
     // ✅ Charge les favoris uniquement si la zone existe
     if (document.getElementById("favorites-list")) {
       loadFavorites();
@@ -112,8 +128,30 @@ if (searchButton) {
   });
 }
 
-// 🔖 Ajout aux favoris
+// 🔖 Ajout ou retrait des favoris + mise à jour visuelle
 const favButtons = document.querySelectorAll(".fav-btn");
+
+function updateFavButtonState() {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const key = `favorites_${user.uid}`;
+  const favorites = JSON.parse(localStorage.getItem(key)) || [];
+
+  favButtons.forEach(btn => {
+    const card = btn.closest(".fic-card");
+    const link = card.querySelector("a")?.getAttribute("href");
+    const isFavorited = favorites.some(f => f.link === link);
+
+    if (isFavorited) {
+      btn.classList.add("favorited");
+      btn.title = "Retirer des favoris";
+    } else {
+      btn.classList.remove("favorited");
+      btn.title = "Ajouter aux favoris";
+    }
+  });
+}
 
 favButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -130,20 +168,25 @@ favButtons.forEach(btn => {
 
     const user = auth.currentUser;
     if (!user) {
-      alert("Connecte-toi pour ajouter aux favoris !");
+      alert("Connecte-toi pour gérer tes favoris !");
       return;
     }
 
     const key = `favorites_${user.uid}`;
-    const existing = JSON.parse(localStorage.getItem(key)) || [];
+    let favorites = JSON.parse(localStorage.getItem(key)) || [];
 
-    if (!existing.some(f => f.link === story.link)) {
-      existing.unshift(story);
-      localStorage.setItem(key, JSON.stringify(existing));
+    const index = favorites.findIndex(f => f.link === story.link);
+
+    if (index === -1) {
+      favorites.unshift(story);
       alert("Ajouté aux favoris !");
     } else {
-      alert("Déjà dans tes favoris !");
+      favorites.splice(index, 1);
+      alert("Retiré des favoris !");
     }
+
+    localStorage.setItem(key, JSON.stringify(favorites));
+    updateFavButtonState();
   });
 });
 
