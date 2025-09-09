@@ -9,6 +9,8 @@
   <header>
     <h1>Bienvenue dans un univers... surprenant</h1>
   </header>
+
+  <!-- 🔍 Barre de recherche -->
   <section id="search-section">
     <input type="text" id="search-bar" placeholder="Rechercher par titre...">
     <div id="advanced-search">
@@ -22,41 +24,51 @@
       <button id="search-button">Rechercher</button>
     </div>
   </section>
+
+  <!-- 📚 Catégories -->
   <section id="categories">
+    <!-- 🧨 Zone Fan Fictions -->
     <div class="category" id="fanfiction-zone">
       <h2>Fan Fictions</h2>
-      <!-- Les fanfics seront affichées ici -->
+
+      <div class="fic-card" data-type="fanfiction" data-title="Ksos 5.0 : Meurtre en Haute-Savoie" data-author="Copilot" data-date="2025-09-09">
+        <h3>Ksos 5.0 : Meurtre en Haute-Savoie</h3>
+        <p><strong>Auteur :</strong> Copilot</p>
+        <p><strong>Date :</strong> 9 septembre 2025</p>
+        <p><strong>Type :</strong> Fan Fiction</p>
+        <p>Quand les Ksos font face à la mort... 🔪</p>
+        <a href="fanfics/histoire1.html">Lire l’histoire</a>
+      </div>
+
+      <div class="fic-card" data-type="fanfiction" data-title="Ksos 6.0 : Le Pacte des Cendres" data-author="Copilot" data-date="2025-09-10">
+        <h3>Ksos 6.0 : Le Pacte des Cendres</h3>
+        <p><strong>Auteur :</strong> Copilot</p>
+        <p><strong>Date :</strong> 10 septembre 2025</p>
+        <p><strong>Type :</strong> Fan Fiction</p>
+        <p>Un an après le meurtre de Jules... 🔪</p>
+        <a href="fanfics/histoire2.html">Lire l’histoire</a>
+      </div>
     </div>
 
+    <!-- 📖 Zone Romans -->
     <div class="category" id="roman-zone">
       <h2>Romans</h2>
-      <!-- Les romans seront affichés ici -->
+
+      <div class="fic-card" data-type="roman" data-title="Ksos 7.0 : L’Héritage du Sang" data-author="Copilot" data-date="2025-09-11">
+        <h3>Ksos 7.0 : L’Héritage du Sang</h3>
+        <p><strong>Auteur :</strong> Copilot</p>
+        <p><strong>Date :</strong> 11 septembre 2025</p>
+        <p><strong>Type :</strong> Roman</p>
+        <p>Une lignée maudite, un secret enfoui... 🩸</p>
+        <a href="fanfics/histoire3.html">Lire le roman</a>
+      </div>
     </div>
   </section>
-  <div class="fic-card" data-type="fanfiction" ...></div>
-  <!-- dans #fanfiction-zone -->
-    <div class="fic-card" data-type="fanfiction" data-title="Ksos 5.0 : Meurtre en Haute-Savoie" data-author="Copilot" data-date="2025-09-09">
-      <h3>Ksos 5.0 : Meurtre en Haute-Savoie</h3>
-      <p><strong>Auteur :</strong> Copilot</p>
-      <p><strong>Date :</strong> 9 septembre 2025</p>
-      <p><strong>Type :</strong> Fan Fiction</p>
-      <p>Quand les Ksos font face à la mort... 🔪</p>
-      <a href="fanfics/histoire1.html">Lire l’histoire</a>
-    </div>
-    <div class="fic-card" data-type="fanfiction" data-title="Ksos 6.0 : Le Pacte des Cendres" data-author="Copilot" data-date="2025-09-10">
-      <h3>Ksos 6.0 : Le Pacte des Cendres</h3>
-      <p><strong>Auteur :</strong> Copilot</p>
-      <p><strong>Date :</strong> 10 septembre 2025</p>
-      <p><strong>Type :</strong> Fan Fiction</p>
-      <p>Un an après le meurtre de Jules... 🔪</p>
-      <a href="fanfics/histoire1.html">Lire l’histoire</a>
-    </div>
 
-
-  <div class="fic-card" data-type="roman" ...></div>
-  <!-- dans #roman-zone -->
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
