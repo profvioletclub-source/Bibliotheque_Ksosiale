@@ -39,3 +39,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchButton.addEventListener("click", filterCards);
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const auth = firebase.auth();
+
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const signupBtn = document.getElementById("signup");
+  const loginBtn = document.getElementById("login");
+  const logoutBtn = document.getElementById("logout");
+
+  signupBtn.addEventListener("click", () => {
+    auth.createUserWithEmailAndPassword(emailInput.value, passwordInput.value)
+      .then(user => alert("Compte créé !"))
+      .catch(error => alert(error.message));
+  });
+
+  loginBtn.addEventListener("click", () => {
+    auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value)
+      .then(user => alert("Connecté !"))
+      .catch(error => alert(error.message));
+  });
+
+  logoutBtn.addEventListener("click", () => {
+    auth.signOut().then(() => alert("Déconnecté !"));
+  });
+
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      logoutBtn.style.display = "inline-block";
+      signupBtn.style.display = "none";
+      loginBtn.style.display = "none";
+    } else {
+      logoutBtn.style.display = "none";
+      signupBtn.style.display = "inline-block";
+      loginBtn.style.display = "inline-block";
+    }
+  });
+});
