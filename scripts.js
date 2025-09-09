@@ -91,17 +91,19 @@ const searchType = document.getElementById("search-type");
 const searchButton = document.getElementById("search-button");
 
 if (searchButton) {
-  searchButton.addEventListener("click", () => {
-    const query = {
-    title: searchBar?.value || "",
-    author: searchAuthor?.value || "",
-    date: searchDate?.value || "",
-    type: searchType?.value || ""
-  };
+  searchButton.addEventListener("click", (e) => {
+    e.preventDefault(); // évite le comportement par défaut du lien
 
-  localStorage.setItem("ksos_search", JSON.stringify(query));
-  window.location.href = "recherche.html";
-});
+    const query = {
+      title: searchBar?.value || "",
+      author: searchAuthor?.value || "",
+      date: searchDate?.value || "",
+      type: searchType?.value || ""
+    };
+
+    localStorage.setItem("ksos_search", JSON.stringify(query));
+    window.location.href = "recherche.html";
+  });
 }
 
 // 🔖 Ajout ou retrait des favoris + mise à jour visuelle
