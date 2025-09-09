@@ -114,66 +114,47 @@ if (searchButton) {
 }
 
 // 🔖 Ajout ou retrait des favoris + mise à jour visuelle
-const favButtons = document.querySelectorAll(".fav-btn");
-
-function updateFavButtonState() {
-  const user = auth.currentUser;
-  if (!user) return;
-
-  const key = `favorites_${user.uid}`;
-  const favorites = JSON.parse(localStorage.getItem(key)) || [];
-
+let favButtons = [];
+function refreshFavButtons() {
+  favButtons = document.querySelectorAll(".fav-btn");
   favButtons.forEach(btn => {
-    const card = btn.closest(".fic-card");
-    const link = card.querySelector("a")?.getAttribute("href");
-    const isFavorited = favorites.some(f => f.link === link);
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".fic-card");
+      if (!card) return;
 
-    if (isFavorited) {
-      btn.classList.add("favorited");
-      btn.title = "Retirer des favoris";
-    } else {
-      btn.classList.remove("favorited");
-      btn.title = "Ajouter aux favoris";
-    }
+      const story = {
+        title: card.getAttribute("data-title"),
+        author: card.getAttribute("data-author"),
+        date: card.getAttribute("data-date"),
+        type: card.getAttribute("data-type"),
+        link: card.querySelector("a")?.getAttribute("href")
+      };
+
+      const user = auth.currentUser;
+      if (!user) {
+        alert("Connecte-toi pour gérer tes favoris !");
+        return;
+      }
+
+      const key = `favorites_${user.uid}`;
+      let favorites = JSON.parse(localStorage.getItem(key)) || [];
+      const index = favorites.findIndex(f => f.link === story.link);
+
+      if (index === -1) {
+        favorites.unshift(story);
+        alert("Ajouté aux favoris !");
+      } else {
+        favorites.splice(index, 1);
+        alert("Retiré des favoris !");
+      }
+
+      localStorage.setItem(key, JSON.stringify(favorites));
+      updateFavButtonState();
+    });
   });
 }
 
-favButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const card = btn.closest(".fic-card");
-    if (!card) return;
-
-    const story = {
-      title: card.getAttribute("data-title"),
-      author: card.getAttribute("data-author"),
-      date: card.getAttribute("data-date"),
-      type: card.getAttribute("data-type"),
-      link: card.querySelector("a")?.getAttribute("href")
-    };
-
-    const user = auth.currentUser;
-    if (!user) {
-      alert("Connecte-toi pour gérer tes favoris !");
-      return;
-    }
-
-    const key = `favorites_${user.uid}`;
-    let favorites = JSON.parse(localStorage.getItem(key)) || [];
-
-    const index = favorites.findIndex(f => f.link === story.link);
-
-    if (index === -1) {
-      favorites.unshift(story);
-      alert("Ajouté aux favoris !");
-    } else {
-      favorites.splice(index, 1);
-      alert("Retiré des favoris !");
-    }
-
-    localStorage.setItem(key, JSON.stringify(favorites));
-    updateFavButtonState();
-  });
-});
+refreshFavButtons();
 
 // 📚 Affichage des favoris
 function loadFavorites() {
