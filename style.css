@@ -118,16 +118,6 @@ button:hover {
     margin: 5px 0;
   }
 }
-.fav-btn {
-  background: none;
-  border: none;
-  font-size: 1.2em;
-  cursor: pointer;
-  float: right;
-}
-.fav-btn:hover {
-  color: #8b0000;
-}
 .favorites-zone {
   display: flex;
   flex-direction: column;
@@ -172,5 +162,5 @@ button:hover {
   margin-top: -30px;
 }
 .fav-btn:hover {
-  color: #8b0000;
+  color: var(--color-accent);
 }
