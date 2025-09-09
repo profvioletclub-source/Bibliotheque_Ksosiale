@@ -127,11 +127,12 @@ window.addEventListener("load", () => {
   const popup = document.getElementById("popup-overlay");
   const closeBtn = document.getElementById("close-popup");
 
-  if (popup && closeBtn) {
+  if (!sessionStorage.getItem("popupShown") && popup && closeBtn) {
     popup.style.display = "flex";
+    sessionStorage.setItem("popupShown", "true");
+
     closeBtn.addEventListener("click", () => {
       popup.style.display = "none";
     });
   }
 });
-
