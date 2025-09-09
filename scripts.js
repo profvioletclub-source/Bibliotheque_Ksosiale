@@ -88,3 +88,29 @@ searchButton.addEventListener("click", () => {
     card.style.display = match ? "block" : "none";
   });
 });
+const userAccessBtn = document.getElementById("user-access");
+const userModal = document.getElementById("user-modal");
+const closeModal = document.getElementById("close-modal");
+const userInfo = document.getElementById("user-info");
+
+userAccessBtn.addEventListener("click", () => {
+  userModal.style.display = "flex";
+});
+
+closeModal.addEventListener("click", () => {
+  userModal.style.display = "none";
+});
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    logoutBtn.style.display = "inline-block";
+    signupBtn.style.display = "none";
+    loginBtn.style.display = "none";
+    userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
+  } else {
+    logoutBtn.style.display = "none";
+    signupBtn.style.display = "inline-block";
+    loginBtn.style.display = "inline-block";
+    userInfo.innerHTML = "";
+  }
+});
