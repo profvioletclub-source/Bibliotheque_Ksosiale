@@ -1,6 +1,12 @@
 // 🔥 Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // 🔧 Configuration Firebase
 const firebaseConfig = {
@@ -40,26 +46,31 @@ if (signupBtn && loginBtn && logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     signOut(auth).then(() => alert("Déconnecté !"));
   });
-
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      logoutBtn.style.display = "inline-block";
-      signupBtn.style.display = "none";
-      loginBtn.style.display = "none";
-      if (userInfo) {
-        userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
-      }
-      loadFavorites(); // 🔄 Charge les favoris à la connexion
-    } else {
-      logoutBtn.style.display = "none";
-      signupBtn.style.display = "inline-block";
-      loginBtn.style.display = "inline-block";
-      if (userInfo) {
-        userInfo.innerHTML = "";
-      }
-    }
-  });
 }
+
+// 🔄 État de connexion + chargement des favoris
+onAuthStateChanged(auth, user => {
+  if (user) {
+    if (logoutBtn) logoutBtn.style.display = "inline-block";
+    if (signupBtn) signupBtn.style.display = "none";
+    if (loginBtn) loginBtn.style.display = "none";
+    if (userInfo) {
+      userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
+    }
+
+    // ✅ Charge les favoris uniquement si la zone existe
+    if (document.getElementById("favorites-list")) {
+      loadFavorites();
+    }
+  } else {
+    if (logoutBtn) logoutBtn.style.display = "none";
+    if (signupBtn) signupBtn.style.display = "inline-block";
+    if (loginBtn) loginBtn.style.display = "inline-block";
+    if (userInfo) {
+      userInfo.innerHTML = "";
+    }
+  }
+});
 
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
@@ -110,11 +121,11 @@ favButtons.forEach(btn => {
     if (!card) return;
 
     const story = {
-      title: card.getAttribute("data-title") || card.querySelector("h3")?.textContent || "Titre inconnu",
-      author: card.getAttribute("data-author") || "Auteur inconnu",
-      date: card.getAttribute("data-date") || "Date inconnue",
-      type: card.getAttribute("data-type") || "Type inconnu",
-      link: card.querySelector("a")?.getAttribute("href") || "#"
+      title: card.getAttribute("data-title"),
+      author: card.getAttribute("data-author"),
+      date: card.getAttribute("data-date"),
+      type: card.getAttribute("data-type"),
+      link: card.querySelector("a")?.getAttribute("href")
     };
 
     const user = auth.currentUser;
