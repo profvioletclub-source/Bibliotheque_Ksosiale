@@ -152,11 +152,6 @@ function loadFavorites() {
   favorites.forEach(fav => {
     const card = document.createElement("div");
     card.className = "fic-card";
-    card.dataset.title = fav.title;
-    card.dataset.author = fav.author;
-    card.dataset.date = fav.date;
-    card.dataset.type = fav.type;
-
     card.innerHTML = `
       <h3>${fav.title}</h3>
       <p><strong>Auteur :</strong> ${fav.author}</p>
@@ -164,7 +159,6 @@ function loadFavorites() {
       <p><strong>Type :</strong> ${fav.type}</p>
       <a href="${fav.link}">Lire le texte</a>
     `;
-
     list.appendChild(card);
   });
 }
