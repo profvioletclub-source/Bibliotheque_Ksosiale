@@ -198,6 +198,6 @@ function loadFavorites() {
     `;
 
     list.appendChild(card);
-    refreshFavButtons();
   });
+  refreshFavButtons();
 }
