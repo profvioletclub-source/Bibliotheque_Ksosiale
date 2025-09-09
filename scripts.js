@@ -73,21 +73,6 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-
-    // ✅ Charge les favoris uniquement si la zone existe
-    if (document.getElementById("favorites-list")) {
-      loadFavorites();
-    }
-  } else {
-    if (logoutBtn) logoutBtn.style.display = "none";
-    if (signupBtn) signupBtn.style.display = "inline-block";
-    if (loginBtn) loginBtn.style.display = "inline-block";
-    if (userInfo) {
-      userInfo.innerHTML = "";
-    }
-  }
-});
-
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
 links.forEach(link => {
