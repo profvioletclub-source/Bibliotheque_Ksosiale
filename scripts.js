@@ -99,3 +99,27 @@ if (searchButton) {
     });
   });
 }
+const favButtons = document.querySelectorAll(".fav-btn");
+
+favButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const storyId = btn.dataset.id;
+    const user = auth.currentUser;
+    if (!user) {
+      alert("Connecte-toi pour ajouter aux favoris !");
+      return;
+    }
+
+    const key = `favorites_${user.uid}`;
+    const existing = JSON.parse(localStorage.getItem(key)) || [];
+
+    // Évite les doublons
+    if (!existing.includes(storyId)) {
+      existing.unshift(storyId); // Ajoute en haut (plus récent)
+      localStorage.setItem(key, JSON.stringify(existing));
+      alert("Ajouté aux favoris !");
+    } else {
+      alert("Déjà dans tes favoris !");
+    }
+  });
+});
