@@ -60,21 +60,6 @@ if (signupBtn && loginBtn && logoutBtn) {
   });
 }
 
-// 👤 Interface utilisateur modale
-const userAccessBtn = document.getElementById("user-access");
-const userModal = document.getElementById("user-modal");
-const closeModal = document.getElementById("close-modal");
-
-if (userAccessBtn && userModal && closeModal) {
-  userAccessBtn.addEventListener("click", () => {
-    userModal.style.display = "flex";
-  });
-
-  closeModal.addEventListener("click", () => {
-    userModal.style.display = "none";
-  });
-}
-
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
 links.forEach(link => {
