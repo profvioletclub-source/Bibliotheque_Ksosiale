@@ -118,3 +118,13 @@ button:hover {
     margin: 5px 0;
   }
 }
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  float: right;
+}
+.fav-btn:hover {
+  color: #8b0000;
+}
