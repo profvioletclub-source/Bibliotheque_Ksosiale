@@ -186,3 +186,17 @@ button:hover {
 .fav-btn.favorited {
   color: gold; /* jaune si en favoris */
 }
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.4em;
+  cursor: pointer;
+  float: right;
+  margin-top: -30px;
+  color: var(--color-accent); /* rouge par défaut */
+  transition: color 0.3s ease;
+}
+
+.fav-btn.favorited {
+  color: gold; /* jaune si en favoris */
+}
