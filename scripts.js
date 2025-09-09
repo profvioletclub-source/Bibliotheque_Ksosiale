@@ -188,9 +188,14 @@ function loadFavorites() {
   favorites.forEach(fav => {
     const card = document.createElement("div");
     card.className = "fic-card";
+    card.setAttribute("data-title", fav.title);
+    card.setAttribute("data-author", fav.author);
+    card.setAttribute("data-date", fav.date);
+    card.setAttribute("data-type", fav.type);
 
     card.innerHTML = `
       <h3>${fav.title}</h3>
+      <button class="fav-btn" title="Retirer des favoris">🔖</button>
       <p><strong>Auteur :</strong> ${fav.author}</p>
       <p><strong>Date :</strong> ${fav.date}</p>
       <p><strong>Type :</strong> ${fav.type}</p>
