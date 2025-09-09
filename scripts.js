@@ -102,6 +102,7 @@ if (searchButton) {
   localStorage.setItem("ksos_search", JSON.stringify(query));
   window.location.href = "recherche.html";
 });
+}
 
 // 🔖 Ajout ou retrait des favoris + mise à jour visuelle
 let favButtons = [];
