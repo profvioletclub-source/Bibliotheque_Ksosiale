@@ -200,3 +200,35 @@ button:hover {
 .fav-btn.favorited {
   color: gold; /* jaune si en favoris */
 }
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* masqué par défaut */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#close-popup {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
