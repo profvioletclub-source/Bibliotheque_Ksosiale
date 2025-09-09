@@ -110,10 +110,10 @@ favButtons.forEach(btn => {
     if (!card) return;
 
     const story = {
-      title: card.dataset.title || card.querySelector("h3")?.textContent || "Titre inconnu",
-      author: card.dataset.author || "Auteur inconnu",
-      date: card.dataset.date || "Date inconnue",
-      type: card.dataset.type || "Type inconnu",
+      title: card.getAttribute("data-title") || card.querySelector("h3")?.textContent || "Titre inconnu",
+      author: card.getAttribute("data-author") || "Auteur inconnu",
+      date: card.getAttribute("data-date") || "Date inconnue",
+      type: card.getAttribute("data-type") || "Type inconnu",
       link: card.querySelector("a")?.getAttribute("href") || "#"
     };
 
