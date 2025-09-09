@@ -171,8 +171,6 @@ function updateFavButtonState() {
   });
 }
 
-refreshFavButtons();
-
 // 📚 Affichage des favoris
 function loadFavorites() {
   const user = auth.currentUser;
@@ -199,5 +197,6 @@ function loadFavorites() {
     `;
 
     list.appendChild(card);
+    refreshFavButtons();
   });
 }
