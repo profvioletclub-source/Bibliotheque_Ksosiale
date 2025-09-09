@@ -58,7 +58,8 @@ onAuthStateChanged(auth, user => {
       userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
     }
 
-    updateFavButtonState(); // ✅
+    refreshFavButtons();        // ✅ Ajoute cette ligne ici
+    updateFavButtonState();     // ✅ Mise à jour visuelle
 
     if (document.getElementById("favorites-list")) {
       loadFavorites();
