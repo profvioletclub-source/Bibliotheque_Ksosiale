@@ -1,12 +1,16 @@
 const romans = [
   {
-    title: "Programme - UnFra (Version du 25 mars 2025)",
-    author: "Anthony RAVE et Mewenn RODET",
-    date: "2025-09-10",
+    title: "Le Voyage dans le Musée",
+    author: "Collectif",
+    date: "2025-10-01",
     type: "roman",
-    description: "...",
+    description: "En ce dimanche de janvier, Michel se réveille et se réjouit de voir le soleil dont les rayons passent à travers les volets.
+          Mais il va vite déchanter. Il a neigé toute la nuit. Ce qui ne l'arrange pas car il doit aller à Lyon voir son amie, mais il n'a pas monté les pneus neige.
+          Il va devoir s'y atteler, mais rien ne va se passer comme il le souhaite et il n'aura pas le temps de tout faire.
+          Il décide alors de rester à Cran Gevrier et d'aller se promener au bord du lac d'Annecy. 
+          Mais en traversant la place Chorus, un événement va totalement bouleverser son après-midi...",
     link: "roman/voyagemusee.html"
-  }
+  } 
 ];
 
 const zone = document.getElementById("roman-zone");
