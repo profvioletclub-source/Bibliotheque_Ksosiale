@@ -1,3 +1,6 @@
+import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
+emailjs.init("service_venzagw"); // ← remplace par ta clé EmailJS
+
 import { auth } from "./firebase.js";
 import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
@@ -103,3 +106,33 @@ function loadFavorites() {
 
   updateFavButtonState();
 }
+
+const contactForm = document.getElementById("contact-form");
+const mailStatus = document.getElementById("mail-status");
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const user = window.auth?.currentUser;
+  if (!user) {
+    mailStatus.textContent = "❌ Tu dois être connecté pour envoyer un message.";
+    return;
+  }
+
+  const templateParams = {
+    from_email: document.getElementById("from_email").value,
+    message: document.getElementById("message").value,
+    user_uid: user.uid,
+    user_email: user.email
+  };
+
+  emailjs.send("TON_SERVICE_ID", "TON_TEMPLATE_ID", templateParams)
+    .then(() => {
+      mailStatus.textContent = "✅ Message envoyé avec succès !";
+      contactForm.reset();
+    })
+    .catch((error) => {
+      mailStatus.textContent = "❌ Échec de l'envoi : " + error.text;
+    });
+});
+
