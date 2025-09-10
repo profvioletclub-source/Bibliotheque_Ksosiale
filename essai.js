@@ -1,6 +1,6 @@
 const essay = [
   {
-    title: "Programme - UnFra (Version du 25 mars 2025",
+    title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
     type: "essay",
