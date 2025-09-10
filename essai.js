@@ -26,7 +26,7 @@ essay.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Essai</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}">Lire la Fan fiction</a>
+    <a href="${fic.link}">Lire l'Essai</a>
   `;
 
   zone.appendChild(card);
