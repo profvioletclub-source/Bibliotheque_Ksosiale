@@ -1,4 +1,4 @@
-const romans = [
+const roman = [
   {
     title: "Le Voyage dans le Musée",
     author: "Collectif",
@@ -15,7 +15,7 @@ const romans = [
 
 const zone = document.getElementById("roman-zone");
 
-romans.forEach(fic => {
+roman.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
