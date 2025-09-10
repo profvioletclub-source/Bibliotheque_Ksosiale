@@ -1,3 +1,5 @@
+import { auth } from "./firebase.js";
+
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
 links.forEach(link => {
