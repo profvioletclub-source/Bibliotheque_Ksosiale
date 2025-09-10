@@ -24,7 +24,7 @@ essay.forEach(fic => {
     <button class="fav-btn" title="Ajouter aux favoris">🔖</button>
     <p><strong>Auteur :</strong> ${fic.author}</p>
     <p><strong>Date :</strong> ${fic.date}</p>
-    <p><strong>Type :</strong> Fan Fiction</p>
+    <p><strong>Type :</strong> Essai</p>
     <p>${fic.description}</p>
     <a href="${fic.link}">Lire la Fan fiction</a>
   `;
