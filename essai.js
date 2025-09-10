@@ -30,9 +30,9 @@ essay.forEach(fic => {
   `;
 
   zone.appendChild(card);
-  if (typeof refreshFavButtons === "function") {
-    refreshFavButtons();
-  }
 });
 
+if (typeof refreshFavButtons === "function") {
+  refreshFavButtons();
+}
 // Tu peux réutiliser refreshFavButtons() ici si tu l’as en module
