@@ -21,6 +21,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+window.auth = auth;
 
 // 🔐 Authentification
 const emailInput = document.getElementById("email");
