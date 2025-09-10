@@ -4,7 +4,7 @@ const essay = [
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
     type: "essay",
-    description: "Un an après le meurtre de Jules... 🔪",
+    description: "Analyses et théories politiques",
     link: "essai/progunfra25mars2025.html"
   }
 ];
