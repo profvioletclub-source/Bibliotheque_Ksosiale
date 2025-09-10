@@ -1,3 +1,6 @@
+import { auth } from "./firebase.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
 // 🔐 Authentification
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
