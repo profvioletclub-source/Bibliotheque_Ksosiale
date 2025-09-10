@@ -10,7 +10,6 @@ const romans_liste = [
 ];
 
 const zone = document.getElementById("roman-zone");
-zone.innerHTML = "<p style='color:green;'>✅ Script chargé et zone trouvée</p>";
 
 romans_liste.forEach(fic => {
   const card = document.createElement("div");
