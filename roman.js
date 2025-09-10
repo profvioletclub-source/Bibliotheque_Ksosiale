@@ -9,7 +9,7 @@ const romans = [
           Il va devoir s'y atteler, mais rien ne va se passer comme il le souhaite et il n'aura pas le temps de tout faire.
           Il décide alors de rester à Cran Gevrier et d'aller se promener au bord du lac d'Annecy. 
           Mais en traversant la place Chorus, un événement va totalement bouleverser son après-midi...",
-    link: "roman/voyagemusee.html"
+    link: "romans/voyagemusee.html"
   } 
 ];
 
