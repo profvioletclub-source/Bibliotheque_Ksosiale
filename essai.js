@@ -6,6 +6,14 @@ const essay = [
     type: "essay",
     description: "Analyses et théories politiques",
     link: "essai/progunfra25mars2025.html"
+  },
+  {
+    title: "Haïku",
+    author: "Anthony RAVE",
+    date: "2025-09-10",
+    type: "essay",
+    description: "Poèmes courts",
+    link: "essai/haiku.html"
   }
 ];
 
