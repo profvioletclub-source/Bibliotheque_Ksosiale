@@ -1,23 +1,15 @@
 const fanfics = [
   {
-    title: "Ksos 5.0 : Meurtre en Haute-Savoie",
-    author: "Copilot",
-    date: "2025-09-09",
-    type: "fanfiction",
-    description: "Quand les Ksos font face à la mort... 🔪",
-    link: "fanfics/fanfics1.html"
-  },
-  {
-    title: "Ksos 6.0 : Le Pacte des Cendres",
-    author: "Copilot",
+    title: "Programme - UnFra (Version du 25 mars 2025",
+    author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
-    type: "fanfiction",
+    type: "essay",
     description: "Un an après le meurtre de Jules... 🔪",
-    link: "fanfics/fanfics2.html"
+    link: "essai/progunfra25mars2025.html"
   }
 ];
 
-const zone = document.getElementById("fanfiction-zone");
+const zone = document.getElementById("essay-zone");
 
 fanfics.forEach(fic => {
   const card = document.createElement("div");
