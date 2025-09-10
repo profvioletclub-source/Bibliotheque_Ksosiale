@@ -11,7 +11,7 @@ const essay = [
 
 const zone = document.getElementById("essay-zone");
 
-fanfics.forEach(fic => {
+essay.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
