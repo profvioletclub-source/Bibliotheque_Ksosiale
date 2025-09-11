@@ -7,17 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 emailjs.init("2fXXjggeS5m1IIYFu");
 
-function waitForAuth(retries = 10) {
-  if (window.auth) {
-    startApp(window.auth);
-  } else if (retries > 0) {
-    setTimeout(() => waitForAuth(retries - 1), 200);
-  } else {
-    document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>❌ Auth non disponible</p>");
-  }
-}
-
-waitForAuth();
+import { auth } from "./firebase.js";
 
 function startApp(auth) {
   document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
