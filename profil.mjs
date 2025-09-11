@@ -1,3 +1,12 @@
+import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+emailjs.init("2fXXjggeS5m1IIYFu");
+
 function waitForAuth(retries = 10) {
   if (window.auth) {
     startApp(window.auth);
@@ -14,21 +23,9 @@ function startApp(auth) {
   document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
   document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : oui</p>`);
 
-  // 📧 EmailJS
-  import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
-  emailjs.init("2fXXjggeS5m1IIYFu");
-
   // 🔐 Récupération de Firebase Auth
   const auth = window.auth;
   document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : ${auth ? "oui" : "non"}</p>`);
-
-  // 🔐 Import des fonctions Firebase
-  import {
-    onAuthStateChanged,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signOut
-  } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
   // 🔐 Authentification
   const emailInput = document.getElementById("email");
