@@ -1,3 +1,5 @@
+document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Script exécuté</p>");
+
 // 🔥 Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import {
