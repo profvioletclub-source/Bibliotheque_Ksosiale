@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-window.auth = getAuth(app);
+export const auth = getAuth(app);
 
 // ✅ Test visuel
 document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Firebase initialisé</p>");
