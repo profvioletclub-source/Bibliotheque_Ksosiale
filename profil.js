@@ -1,11 +1,20 @@
-document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
 
+
+// 📧 EmailJS
 import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
 emailjs.init("2fXXjggeS5m1IIYFu");
 
+// 🔐 Récupération de Firebase Auth
 const auth = window.auth;
 document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : ${auth ? "oui" : "non"}</p>`);
-import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+// 🔐 Import des fonctions Firebase
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // 🔐 Authentification
 const emailInput = document.getElementById("email");
@@ -21,17 +30,15 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
     createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Compte créé !"))
       .catch(error => {
-        console.error("Erreur création :", error);
         alert(error.message);
       });
   });
-  
+
   loginBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Se connecter' actif</p>");
   loginBtn.addEventListener("click", () => {
     signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Connecté !"))
       .catch(error => {
-        console.error("Erreur connexion :", error);
         alert(error.message);
       });
   });
@@ -43,12 +50,13 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
 
 // 🔄 État de connexion + chargement des favoris
 onAuthStateChanged(auth, user => {
+  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
+
   if (user) {
     logoutBtn.style.display = "inline-block";
     signupBtn.style.display = "none";
     loginBtn.style.display = "none";
     userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
-
     updateFavButtonState();
     loadFavorites();
   } else {
@@ -57,7 +65,6 @@ onAuthStateChanged(auth, user => {
     loginBtn.style.display = "inline-block";
     userInfo.innerHTML = "";
   }
-  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
 });
 
 // 🔖 Favoris
@@ -113,13 +120,14 @@ function loadFavorites() {
   updateFavButtonState();
 }
 
+// 📬 Formulaire de contact
 const contactForm = document.getElementById("contact-form");
 const mailStatus = document.getElementById("mail-status");
 
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const user = window.auth?.currentUser;
+  const user = auth.currentUser;
   if (!user) {
     mailStatus.textContent = "❌ Tu dois être connecté pour envoyer un message.";
     return;
@@ -141,5 +149,6 @@ contactForm.addEventListener("submit", (e) => {
       mailStatus.textContent = "❌ Échec de l'envoi : " + error.text;
     });
 });
-document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
 
+// ✅ Test final
+document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
