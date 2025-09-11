@@ -20,4 +20,4 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-window.auth = getAuth(app);
+export const auth = getAuth(app);
