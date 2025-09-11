@@ -1,4 +1,4 @@
-
+document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Test minimal profil.js chargé</p>");
 
 // 📧 EmailJS
 import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
@@ -152,3 +152,5 @@ contactForm.addEventListener("submit", (e) => {
 
 // ✅ Test final
 document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
+
+document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Test minimal profil.js chargé</p>");
