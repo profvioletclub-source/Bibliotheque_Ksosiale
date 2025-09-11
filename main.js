@@ -11,8 +11,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // 📧 EmailJS
-import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
-emailjs.init("2fXXjggeS5m1IIYFu");
+//import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
+//emailjs.init("2fXXjggeS5m1IIYFu");
 
 // 🔧 Config
 const firebaseConfig = {
