@@ -1,4 +1,4 @@
-import { auth } from "./firebase.js";
+import { auth } from "./main.js";
 
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
