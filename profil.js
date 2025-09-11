@@ -55,6 +55,7 @@ onAuthStateChanged(auth, user => {
     loginBtn.style.display = "inline-block";
     userInfo.innerHTML = "";
   }
+  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
 });
 
 // 🔖 Favoris
@@ -138,4 +139,5 @@ contactForm.addEventListener("submit", (e) => {
       mailStatus.textContent = "❌ Échec de l'envoi : " + error.text;
     });
 });
+document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
 
