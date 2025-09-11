@@ -1,3 +1,5 @@
+document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
+
 import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
 emailjs.init("2fXXjggeS5m1IIYFu");
 
