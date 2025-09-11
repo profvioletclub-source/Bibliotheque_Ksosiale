@@ -1,12 +1,7 @@
+
 // 🔥 Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // 🔧 Configuration Firebase
 const firebaseConfig = {
@@ -21,4 +16,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 window.auth = getAuth(app);
+
+// ✅ Test visuel
 document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Firebase initialisé</p>");
