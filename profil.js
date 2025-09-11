@@ -2,6 +2,7 @@ import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.m
 emailjs.init("2fXXjggeS5m1IIYFu");
 
 import { auth } from "./firebase.js";
+document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : ${auth ? "oui" : "non"}</p>`);
 import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // 🔐 Authentification
