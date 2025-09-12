@@ -29,7 +29,6 @@ essay.forEach(fic => {
 
   card.innerHTML = `
     <h3>${fic.title}</h3>
-    <button class="fav-btn" title="Ajouter aux favoris">🔖</button>
     <p><strong>Auteur :</strong> ${fic.author}</p>
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Autre</p>
@@ -38,9 +37,4 @@ essay.forEach(fic => {
   `;
 
   zone.appendChild(card);
-});
-
-if (typeof refreshFavButtons === "function") {
-  refreshFavButtons();
-}
-// Tu peux réutiliser refreshFavButtons() ici si tu l’as en module
+})
