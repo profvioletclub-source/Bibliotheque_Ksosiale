@@ -9,20 +9,20 @@
     document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Script inline actif</p>");
   </script>
   <body>
-    <header>
+    <header class="top-bar">
       <h1>👤 Mon Espace Ksos</h1>
       <a href="index.html">← Retour à l’accueil</a>
-    </header>
-    <main>
-      <section id="auth-section">
-        <h2>Connexion / Inscription</h2>
+
+      <div id="auth-bar">
         <input type="email" id="email" placeholder="Email">
         <input type="password" id="password" placeholder="Mot de passe">
         <button id="signup">Créer un compte</button>
         <button id="login">Se connecter</button>
         <button id="logout" style="display:none;">Se déconnecter</button>
-        <div id="user-info" style="margin-top:10px;"></div>
-      </section>
+        <div id="user-info"></div>
+      </div>
+    </header>
+    <main>
 
       <section id="contact-section">
         <h2>Nous soummettre vos texte / Nous contacter</h2>
