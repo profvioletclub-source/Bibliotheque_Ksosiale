@@ -27,7 +27,20 @@
       <p>© Ksos - Tous droits réservés</p>
     </footer>
     
-    <script type="module" src="main.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
+        authDomain: "bibliothequekassossiale.firebaseapp.com",
+        projectId: "bibliothequekassossiale",
+        storageBucket: "bibliothequekassossiale.firebasestorage.app",
+        messagingSenderId: "1029476191647",
+        appId: "1:1029476191647:web:4da50f87d9aacc635b81aa",
+        measurementId: "G-83CKLXJJHD"
+      };
+      const app = initializeApp(firebaseConfig);
+      document.body.insertAdjacentHTML("beforeend", "<p style='color:blue;'>✅ Firebase initialisé</p>");
+    </script>
     <script>
       document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Script inline exécuté</p>");
     </script>
