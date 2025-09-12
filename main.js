@@ -152,3 +152,32 @@ contactForm.addEventListener("submit", (e) => {
       mailStatus.textContent = "❌ Échec de l'envoi : " + error.text;
     });
 });
+
+
+signupForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const pseudo = document.getElementById("pseudo").value;
+  const nom = document.getElementById("nom").value;
+  const prenom = document.getElementById("prenom").value;
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const uid = userCredential.user.uid;
+
+    // Stocker les infos dans Firestore
+    await setDoc(doc(db, "users", uid), {
+      nom,
+      prenom,
+      email,
+      pseudo
+    });
+
+    alert("Compte créé !");
+    window.location.href = "profil.html";
+  } catch (error) {
+    alert(error.message);
+  }
+});
