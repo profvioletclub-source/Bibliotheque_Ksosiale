@@ -10,7 +10,7 @@ const fanfics = [
   {
     title: "Ksos 6.0 : Le Pacte des Cendres",
     author: "Copilot",
-    date: "2025-09-10",
+    date: "2025-09-12",
     type: "fanfiction",
     description: "Un an après le meurtre de Jules... 🔪",
     link: "fanfics/fanfics2.html"
