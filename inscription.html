@@ -6,3 +6,53 @@
   <input type="password" id="password" placeholder="Mot de passe" required>
   <button type="submit">Créer mon compte</button>
 </form>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
+    authDomain: "bibliothequekassossiale.firebaseapp.com",
+    projectId: "bibliothequekassossiale",
+    storageBucket: "bibliothequekassossiale.firebasestorage.app",
+    messagingSenderId: "1029476191647",
+    appId: "1:1029476191647:web:4da50f87d9aacc635b81aa",
+    measurementId: "G-83CKLXJJHD"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  const form = document.getElementById("signup-form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nom = document.getElementById("nom").value;
+    const prenom = document.getElementById("prenom").value;
+    const email = document.getElementById("email").value;
+    const pseudo = document.getElementById("pseudo").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const uid = userCredential.user.uid;
+
+      await setDoc(doc(db, "users", uid), {
+        nom,
+        prenom,
+        email,
+        pseudo,
+        createdAt: new Date().toISOString()
+      });
+
+      alert("✅ Compte créé avec succès !");
+      window.location.href = "profil.html";
+    } catch (error) {
+      alert("❌ Erreur : " + error.message);
+    }
+  });
+</script>
