@@ -5,6 +5,7 @@
   --color-link: #0077cc;
   --color-card: #fff;
 }
+
 body {
   font-family: 'Georgia', serif;
   background-color: var(--color-bg);
@@ -18,21 +19,26 @@ header, footer {
   text-align: center;
   padding: 10px;
 }
+
 h1 {
   color: var(--color-accent);
 }
+
 h2 {
   color: #444;
   margin-top: 20px;
   font-size: 1.4em;
 }
+
 a {
   color: var(--color-link);
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 #search-section {
   margin-bottom: 20px;
   text-align: center;
@@ -46,32 +52,31 @@ blockquote {
   margin: 20px 0;
 }
 
-#favorites-section h2 {
-  color: var(--color-accent);
-  text-align: center;
-}
-
-
-#search-section input, #search-section select {
+#search-section input,
+#search-section select {
   margin: 5px;
   padding: 8px;
   font-size: 1em;
 }
+
 .category {
   border: 2px solid #ccc;
   padding: 15px;
   margin: 20px 0;
   background-color: #fdf6f0;
 }
+
 .fic-card {
   border: 1px solid #aaa;
   padding: 10px;
   margin: 10px 0;
   background-color: var(--color-card);
 }
+
 ol {
-  list-style-type: decimal; /* 1, 2, 3... */
+  list-style-type: decimal;
 }
+
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -89,6 +94,7 @@ ol {
   width: 300px;
   box-shadow: 0 0 10px #333;
 }
+
 button {
   padding: 8px 12px;
   margin: 5px;
@@ -103,6 +109,7 @@ button {
 button:hover {
   background-color: #a30000;
 }
+
 .modal-content input {
   width: 100%;
   margin: 5px 0;
@@ -111,6 +118,7 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -126,80 +134,7 @@ button:hover {
     margin: 5px 0;
   }
 }
-.favorites-zone {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
 
-.favorites-zone .fic-card {
-  border: 1px solid #aaa;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-#favorites-section {
-  margin-top: 30px;
-}
-
-#favorites-section h2 {
-  color: #8b0000;
-  text-align: center;
-}
-
-#favorites-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-#favorites-list .fic-card {
-  border: 1px solid #aaa;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-.fav-btn {
-  background: none;
-  border: none;
-  font-size: 1.2em;
-  cursor: pointer;
-  float: right;
-  margin-top: -30px;
-}
-.fav-btn:hover {
-  color: var(--color-accent);
-}
-.fav-btn {
-  background: none;
-  border: none;
-  font-size: 1.4em;
-  cursor: pointer;
-  float: right;
-  margin-top: -30px;
-  color: var(--color-accent); /* rouge par défaut */
-  transition: color 0.3s ease;
-}
-
-.fav-btn.favorited {
-  color: gold; /* jaune si en favoris */
-}
-.fav-btn {
-  background: none;
-  border: none;
-  font-size: 1.4em;
-  cursor: pointer;
-  float: right;
-  margin-top: -30px;
-  color: var(--color-accent); /* rouge par défaut */
-  transition: color 0.3s ease;
-}
-
-.fav-btn.favorited {
-  color: gold; /* jaune si en favoris */
-}
 #popup-overlay {
   position: fixed;
   top: 0;
@@ -207,7 +142,7 @@ button:hover {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  display: none; /* masqué par défaut */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
@@ -224,32 +159,4 @@ button:hover {
 
 #close-popup {
   margin-top: 20px;
-  padding: 10px 20px;
-  background: #c0392b;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.top-bar {
-  background-color: #f0f0f0;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #ccc;
-}
-
-#auth-bar {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-#auth-bar input,
-#auth-bar button {
-  padding: 5px;
-  font-size: 14px;
-}
-
+  padding
