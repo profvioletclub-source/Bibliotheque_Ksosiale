@@ -173,3 +173,19 @@ document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Att
 
 // ✅ Test visuel
 document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
+
+
+
+
+//profil.html :
+  //    <section id="auth-section">
+   //     <h2>Connexion / Inscription</h2>
+   //     <input type="email" id="email" placeholder="Email">
+    //    <input type="password" id="password" placeholder="Mot de passe">
+   //     <button id="signup">Créer un compte</button>
+    //    <button id="login">Se connecter</button>
+   //     <button id="logout" style="display:none;">Se déconnecter</button>
+   //     <div id="user-info" style="margin-top:10px;"></div>
+   //   </section>
+
+
