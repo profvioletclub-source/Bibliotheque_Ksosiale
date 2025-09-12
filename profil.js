@@ -25,6 +25,7 @@ const logoutBtn = document.getElementById("logout");
 if (logoutBtn) {
   document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Bouton logout détecté</p>");
 }
+document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth : ${auth ? "OK" : "NON"}</p>`);
 const userInfo = document.getElementById("user-info");
 
 if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
