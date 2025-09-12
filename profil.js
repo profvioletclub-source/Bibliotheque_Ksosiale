@@ -151,6 +151,6 @@ contactForm.addEventListener("submit", (e) => {
 });
 
 // ✅ Test final
-document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
+//document.body.insertAdjacentHTML("beforeend", "<p style='color:purple;'>🧪 Attente de connexion utilisateur...</p>");
 
-document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Test minimal profil.js chargé</p>");
+//document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ Test minimal profil.js chargé</p>");
