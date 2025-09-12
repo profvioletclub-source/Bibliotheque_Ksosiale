@@ -28,8 +28,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Firebase initialisé</p>");
-document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ main.js chargé</p>");
+//document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Firebase initialisé</p>");
+//document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ main.js chargé</p>");
 
 // 🔐 Authentification
 const emailInput = document.getElementById("email");
