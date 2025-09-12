@@ -22,6 +22,9 @@ const passwordInput = document.getElementById("password");
 const signupBtn = document.getElementById("signup");
 const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
+if (logoutBtn) {
+  document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Bouton logout détecté</p>");
+}
 const userInfo = document.getElementById("user-info");
 
 if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
