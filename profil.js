@@ -7,13 +7,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 emailjs.init("2fXXjggeS5m1IIYFu");
 
-import { auth } from "./firebase.js";
+import { auth } from "./main.js";
 
 document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
 document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : oui</p>`);
 
 // 🔐 Récupération de Firebase Auth
-const auth = window.auth;
 document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : ${auth ? "oui" : "non"}</p>`);
 
 // 🔐 Authentification
