@@ -231,4 +231,25 @@ button:hover {
   border-radius: 5px;
   cursor: pointer;
 }
+.top-bar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+#auth-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#auth-bar input,
+#auth-bar button {
+  padding: 5px;
+  font-size: 14px;
+}
 
