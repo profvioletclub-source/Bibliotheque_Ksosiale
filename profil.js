@@ -50,11 +50,13 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
       .then(() => alert("Connecté !"))
       .catch(error => alert(error.message));
   });
-
   logoutBtn.addEventListener("click", () => {
     signOut(auth)
-      .then(() => alert("Déconnecté !"))
-      .catch(error => alert("Erreur de déconnexion : " + error.message));
+      .then(() => {
+        alert("✅ Déconnecté !");
+        location.reload(); // Optionnel
+      })
+      .catch(error => alert("❌ Erreur : " + error.message));
   });
 }
 
