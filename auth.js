@@ -60,6 +60,16 @@ window.addEventListener("DOMContentLoaded", () => {
         const q = query(collection(db, "users"), where("pseudo", "==", identifier));
         const snapshot = await getDocs(q);
 
+        const debugZone = document.getElementById("debug");
+        if (debugZone) {
+          if (snapshot.empty) {
+            debugZone.innerHTML = "<p style='color:red;'>❌ Aucun utilisateur trouvé avec ce pseudo.</p>";
+          } else {
+            const data = snapshot.docs[0].data();
+            debugZone.innerHTML = `<p style='color:green;'>✅ Pseudo trouvé : ${data.pseudo}<br>Email : ${data.email}</p>`;
+          }
+        }
+
         if (snapshot.empty) {
           alert("❌ Aucun utilisateur avec ce pseudo.");
           return;
