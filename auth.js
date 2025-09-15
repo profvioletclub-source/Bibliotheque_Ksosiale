@@ -31,7 +31,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const identifierInput = document.getElementById("email"); // pseudo ou email
+  const identifierInput = document.getElementById("identifier"); // pseudo ou email
   const passwordInput = document.getElementById("password");
   const loginBtn = document.getElementById("login");
   const logoutBtn = document.getElementById("logout");
