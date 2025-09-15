@@ -50,7 +50,6 @@ filtered.forEach(fic => {
   card.className = "fic-card";
   card.innerHTML = `
     <h3>${fic.title}</h3>
-    <button class="fav-btn" title="Ajouter aux favoris">🔖</button>
     <p><strong>Auteur :</strong> ${fic.author}</p>
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> ${fic.type}</p>
