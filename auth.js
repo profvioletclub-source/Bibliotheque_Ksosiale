@@ -3,14 +3,17 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import {
   getFirestore,
   collection,
   query,
   where,
-  getDocs
+  getDocs,
+  doc,
+  setDoc
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -28,10 +31,12 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const identifierInput = document.getElementById("email"); // devient pseudo ou email
+  const identifierInput = document.getElementById("email"); // pseudo ou email
   const passwordInput = document.getElementById("password");
   const loginBtn = document.getElementById("login");
   const logoutBtn = document.getElementById("logout");
+  const signupBtn = document.getElementById("signup");
+  const pseudoInput = document.getElementById("pseudo"); // champ à ajouter dans inscription.html
   const userInfo = document.getElementById("user-info");
   const goToSignup = document.getElementById("go-to-signup");
 
@@ -73,6 +78,34 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch(error => alert("❌ " + error.message));
   });
 
+  // 🆕 Création de compte + enregistrement du pseudo
+  if (signupBtn && pseudoInput) {
+    signupBtn.addEventListener("click", async () => {
+      const email = identifierInput.value.trim();
+      const password = passwordInput.value;
+      const pseudo = pseudoInput.value.trim();
+
+      if (!pseudo) {
+        alert("❌ Le pseudo est requis.");
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        await setDoc(doc(db, "users", user.uid), {
+          email,
+          pseudo
+        });
+
+        alert("✅ Compte créé et pseudo enregistré !");
+      } catch (error) {
+        alert("❌ " + error.message);
+      }
+    });
+  }
+
   // 🔓 Déconnexion
   logoutBtn.addEventListener("click", () => {
     signOut(auth)
@@ -93,4 +126,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
