@@ -3,17 +3,14 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import {
   getFirestore,
   collection,
   query,
   where,
-  getDocs,
-  doc,
-  setDoc
+  getDocs
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -31,23 +28,11 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const identifierInput = document.getElementById("identifier"); // pseudo ou email
+  const identifierInput = document.getElementById("identifier");
   const passwordInput = document.getElementById("password");
   const loginBtn = document.getElementById("login");
-  const logoutBtn = document.getElementById("logout");
-  const signupBtn = document.getElementById("signup");
-  const pseudoInput = document.getElementById("pseudo"); // champ à ajouter dans inscription.html
-  const userInfo = document.getElementById("user-info");
-  const goToSignup = document.getElementById("go-to-signup");
+  const debugZone = document.getElementById("debug");
 
-  // 🔗 Redirection vers inscription.html
-  if (goToSignup) {
-    goToSignup.addEventListener("click", () => {
-      window.location.href = "inscription.html";
-    });
-  }
-
-  // 🔐 Connexion avec pseudo ou email
   loginBtn.addEventListener("click", async () => {
     const identifier = identifierInput.value.trim();
     const password = passwordInput.value;
@@ -60,79 +45,27 @@ window.addEventListener("DOMContentLoaded", () => {
         const q = query(collection(db, "users"), where("pseudo", "==", identifier));
         const snapshot = await getDocs(q);
 
-        const debugZone = document.getElementById("debug");
-        if (debugZone) {
-          if (snapshot.empty) {
-            debugZone.innerHTML = "<p style='color:red;'>❌ Aucun utilisateur trouvé avec ce pseudo.</p>";
-          } else {
-            const data = snapshot.docs[0].data();
-            debugZone.innerHTML = `<p style='color:green;'>✅ Pseudo trouvé : ${data.pseudo}<br>Email : ${data.email}</p>`;
-          }
-        }
-
         if (snapshot.empty) {
-          alert("❌ Aucun utilisateur avec ce pseudo.");
+          debugZone.innerHTML = `<p style="color:red;">❌ Aucun utilisateur trouvé avec le pseudo : <strong>${identifier}</strong></p>`;
           return;
         }
 
         const userData = snapshot.docs[0].data();
         emailToUse = userData.email;
+
+        debugZone.innerHTML = `<p style="color:green;">✅ Pseudo reconnu : <strong>${userData.pseudo}</strong><br>Email associé : ${emailToUse}</p>`;
       } catch (error) {
-        alert("❌ Erreur lors de la recherche du pseudo : " + error.message);
+        debugZone.innerHTML = `<p style="color:red;">❌ Erreur Firestore : ${error.message}</p>`;
         return;
       }
     }
 
-    signInWithEmailAndPassword(auth, emailToUse, password)
-      .then(() => alert("✅ Connecté !"))
-      .catch(error => alert("❌ " + error.message));
-  });
-
-  // 🆕 Création de compte + enregistrement du pseudo
-  if (signupBtn && pseudoInput) {
-    signupBtn.addEventListener("click", async () => {
-      const email = identifierInput.value.trim();
-      const password = passwordInput.value;
-      const pseudo = pseudoInput.value.trim();
-
-      if (!pseudo) {
-        alert("❌ Le pseudo est requis.");
-        return;
-      }
-
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-
-        await setDoc(doc(db, "users", user.uid), {
-          email,
-          pseudo
-        });
-
-        alert("✅ Compte créé et pseudo enregistré !");
-      } catch (error) {
-        alert("❌ " + error.message);
-      }
-    });
-  }
-
-  // 🔓 Déconnexion
-  logoutBtn.addEventListener("click", () => {
-    signOut(auth)
-      .then(() => alert("✅ Déconnecté !"))
-      .catch(error => alert("❌ " + error.message));
-  });
-
-  // 👤 État utilisateur
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      logoutBtn.style.display = "inline-block";
-      loginBtn.style.display = "none";
-      userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
-    } else {
-      logoutBtn.style.display = "none";
-      loginBtn.style.display = "inline-block";
-      userInfo.innerHTML = "<p>Tu n'es pas connecté.</p>";
+    try {
+      await signInWithEmailAndPassword(auth, emailToUse, password);
+      debugZone.innerHTML += `<p style="color:blue;">🔐 Connexion réussie !</p>`;
+    } catch (error) {
+      debugZone.innerHTML += `<p style="color:red;">❌ Erreur de connexion : ${error.message}</p>`;
     }
   });
 });
+
