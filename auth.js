@@ -5,6 +5,13 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
@@ -18,9 +25,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const emailInput = document.getElementById("email");
+  const identifierInput = document.getElementById("email"); // devient pseudo ou email
   const passwordInput = document.getElementById("password");
   const loginBtn = document.getElementById("login");
   const logoutBtn = document.getElementById("logout");
@@ -34,12 +42,33 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🔐 Connexion
-  loginBtn.addEventListener("click", () => {
-    const email = emailInput.value;
+  // 🔐 Connexion avec pseudo ou email
+  loginBtn.addEventListener("click", async () => {
+    const identifier = identifierInput.value.trim();
     const password = passwordInput.value;
 
-    signInWithEmailAndPassword(auth, email, password)
+    let emailToUse = identifier;
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
+
+    if (!isEmail) {
+      try {
+        const q = query(collection(db, "users"), where("pseudo", "==", identifier));
+        const snapshot = await getDocs(q);
+
+        if (snapshot.empty) {
+          alert("❌ Aucun utilisateur avec ce pseudo.");
+          return;
+        }
+
+        const userData = snapshot.docs[0].data();
+        emailToUse = userData.email;
+      } catch (error) {
+        alert("❌ Erreur lors de la recherche du pseudo : " + error.message);
+        return;
+      }
+    }
+
+    signInWithEmailAndPassword(auth, emailToUse, password)
       .then(() => alert("✅ Connecté !"))
       .catch(error => alert("❌ " + error.message));
   });
@@ -64,3 +93,4 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
