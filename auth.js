@@ -25,7 +25,16 @@ window.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login");
   const logoutBtn = document.getElementById("logout");
   const userInfo = document.getElementById("user-info");
+  const goToSignup = document.getElementById("go-to-signup");
 
+  // 🔗 Redirection vers inscription.html
+  if (goToSignup) {
+    goToSignup.addEventListener("click", () => {
+      window.location.href = "inscription.html";
+    });
+  }
+
+  // 🔐 Connexion
   loginBtn.addEventListener("click", () => {
     const email = emailInput.value;
     const password = passwordInput.value;
@@ -35,12 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch(error => alert("❌ " + error.message));
   });
 
+  // 🔓 Déconnexion
   logoutBtn.addEventListener("click", () => {
     signOut(auth)
       .then(() => alert("✅ Déconnecté !"))
       .catch(error => alert("❌ " + error.message));
   });
 
+  // 👤 État utilisateur
   onAuthStateChanged(auth, (user) => {
     if (user) {
       logoutBtn.style.display = "inline-block";
