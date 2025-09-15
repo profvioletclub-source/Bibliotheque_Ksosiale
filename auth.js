@@ -10,38 +10,10 @@ import {
   collection,
   query,
   where,
-  getDocs
+  getDocs,
+  doc,
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
-onAuthStateChanged(auth, async (user) => {
-  const userInfo = document.getElementById("user-info");
-  const logoutBtn = document.getElementById("logout");
-  const loginBtn = document.getElementById("login");
-
-  if (user) {
-    // 🔍 Récupérer le pseudo depuis Firestore
-    try {
-      const docRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
-      } else {
-        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${user.email}</strong></p>`;
-      }
-    } catch (error) {
-      userInfo.innerHTML = `<p>✅ Connecté (erreur lors du chargement du pseudo)</p>`;
-    }
-
-    logoutBtn.style.display = "inline-block";
-    loginBtn.style.display = "none";
-  } else {
-    userInfo.innerHTML = `<p style="color:red;">❌ Tu n'es pas connecté.</p>`;
-    logoutBtn.style.display = "none";
-    loginBtn.style.display = "inline-block";
-  }
-});
 
 const firebaseConfig = {
   apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
@@ -61,8 +33,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const identifierInput = document.getElementById("identifier");
   const passwordInput = document.getElementById("password");
   const loginBtn = document.getElementById("login");
+  const logoutBtn = document.getElementById("logout");
   const debugZone = document.getElementById("debug");
+  const userInfo = document.getElementById("user-info");
 
+  // 🔐 Connexion
   loginBtn.addEventListener("click", async () => {
     const identifier = identifierInput.value.trim();
     const password = passwordInput.value;
@@ -97,5 +72,38 @@ window.addEventListener("DOMContentLoaded", () => {
       debugZone.innerHTML += `<p style="color:red;">❌ Erreur de connexion : ${error.message}</p>`;
     }
   });
-});
 
+  // 🔓 Déconnexion
+  logoutBtn.addEventListener("click", async () => {
+    await signOut(auth);
+    userInfo.innerHTML = `<p style="color:red;">❌ Tu es maintenant déconnecté.</p>`;
+    logoutBtn.style.display = "none";
+    loginBtn.style.display = "inline-block";
+  });
+
+  // 👤 État utilisateur
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      try {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
+        } else {
+          userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${user.email}</strong></p>`;
+        }
+      } catch (error) {
+        userInfo.innerHTML = `<p>✅ Connecté (erreur lors du chargement du pseudo)</p>`;
+      }
+
+      logoutBtn.style.display = "inline-block";
+      loginBtn.style.display = "none";
+    } else {
+      userInfo.innerHTML = `<p style="color:red;">❌ Tu n'es pas connecté.</p>`;
+      logoutBtn.style.display = "none";
+      loginBtn.style.display = "inline-block";
+    }
+  });
+});
