@@ -13,6 +13,36 @@ import {
   getDocs
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+onAuthStateChanged(auth, async (user) => {
+  const userInfo = document.getElementById("user-info");
+  const logoutBtn = document.getElementById("logout");
+  const loginBtn = document.getElementById("login");
+
+  if (user) {
+    // 🔍 Récupérer le pseudo depuis Firestore
+    try {
+      const docRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
+      } else {
+        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${user.email}</strong></p>`;
+      }
+    } catch (error) {
+      userInfo.innerHTML = `<p>✅ Connecté (erreur lors du chargement du pseudo)</p>`;
+    }
+
+    logoutBtn.style.display = "inline-block";
+    loginBtn.style.display = "none";
+  } else {
+    userInfo.innerHTML = `<p style="color:red;">❌ Tu n'es pas connecté.</p>`;
+    logoutBtn.style.display = "none";
+    loginBtn.style.display = "inline-block";
+  }
+});
+
 const firebaseConfig = {
   apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
   authDomain: "bibliothequekassossiale.firebaseapp.com",
