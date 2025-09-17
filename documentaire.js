@@ -1,12 +1,12 @@
 const docu = [
   {
-    title: "x",
+    title: "Or jaune, noir, bleu, quelle différence ?",
     author: "Anthony RAVE",
     date: "2025-09-18",
     type: "docu",
-    description: "x",
-    link: "document/x.html"
-  },
+    description: "Quelle est la différence entre les différents types d'or ?",
+    link: "document/or_jaune_noir_bleu_quelle_difference_?.html"
+  },  
   {
     title: "y",
     author: "Anthony RAVE",
