@@ -5,7 +5,7 @@ const docu = [
     date: "2025-09-18",
     type: "docu",
     description: "x",
-    link: "docu/x.html"
+    link: "document/x.html"
   },
   {
     title: "y",
@@ -13,7 +13,7 @@ const docu = [
     date: "2025-09-18",
     type: "docu",
     description: "y",
-    link: "docu/y.html"
+    link: "document/y.html"
   }
 ];
 
