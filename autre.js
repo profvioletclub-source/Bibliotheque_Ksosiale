@@ -19,7 +19,7 @@ const other = [
 
 const zone = document.getElementById("other-zone");
 
-essay.forEach(fic => {
+other.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
