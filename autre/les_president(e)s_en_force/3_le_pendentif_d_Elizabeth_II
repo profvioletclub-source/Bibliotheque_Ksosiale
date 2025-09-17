@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Les Président(e)s en force - 3 - Le Pendentif d'Elizabeth II</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Les Président(e)s en force</h1>
+    <h1>3</h1>
+    <h1>Le Pendentif d'Elizabeth II</h1>
+    <p><em>Publié le 17 septembre 2025</em></p>
+    <a href="../autre.html">← Retour aux Autres</a>
+  </header>
+
+  <main>
+    <section>
+      <p>Vendredi 13 novembre 2026</p>
+      <p>Durant la troisième guerre mondiale.</p>
+      <quitenote>« Mes chers compatriotes, nous sommes en guerre contre les chinois. »</quitenote>
+      <p>De partout dans le monde et dans toutes les langues résonnait ce même message.</p>
+      <p>Chaque président confinait ses compatriotes. Les chinois, qui n’avaient pas tant de puissances que leurs adversaires, vont tenter de résister.</p>
+
+      <p>Elizabeth II contait lutter avec le pouvoir de son pendentif qui lui permettait d’être très puissant. Son pouvoir était de devenir invisible : elle pouvait l’utiliser pour se déplacer sans pouvoir être vu.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+  </footer>
+</body>
+</html>
