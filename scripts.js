@@ -9,7 +9,6 @@ links.forEach(link => {
 });
 
 // 🔍 Recherche avancée
-const cards = document.querySelectorAll(".fic-card");
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
 const searchDate = document.getElementById("search-date");
@@ -21,11 +20,14 @@ if (searchButton) {
     e.preventDefault(); // évite le comportement par défaut du lien
 
     const query = {
-      title: searchBar?.value || "",
-      author: searchAuthor?.value || "",
+      title: searchBar?.value.trim() || "",
+      author: searchAuthor?.value.trim() || "",
       date: searchDate?.value || "",
       type: searchType?.value || ""
     };
+
+    // 🔍 Log pour test visuel (optionnel sur iPad)
+    console.log("🔍 Requête enregistrée :", query);
 
     localStorage.setItem("ksos_search", JSON.stringify(query));
     window.location.href = "recherche.html";
