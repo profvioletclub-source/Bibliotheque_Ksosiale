@@ -43,7 +43,7 @@ const allTexts = [
     link: "haiku.html"
   }, 
   {
-    title: "1 - Le Collier d'Angela Merkel",
+    title: "La Lignée des Profs - 1 - Le Collier d'Angela Merkel",
     author: "Anthony RAVE",
     date: "2025-09-17",
     type: "other",
@@ -51,7 +51,7 @@ const allTexts = [
     link: "les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   },
   {
-    title: "2 - La Bague d'Emmanuel Macron",
+    title: "La Lignée des Profs - 2 - La Bague d'Emmanuel Macron",
     author: "Anthony RAVE",
     date: "2025-09-17",
     type: "other",
@@ -59,7 +59,7 @@ const allTexts = [
     link: "les_president(e)s_en_force/2_la_bague_d_emmanuel_macron.html"
   },
   {
-    title: "3 - Le Pendentif d'Elizabeth II",
+    title: "La Lignée des Profs - 3 - Le Pendentif d'Elizabeth II",
     author: "Anthony RAVE",
     date: "2025-09-17",
     type: "other",
