@@ -1,25 +1,25 @@
-const other = [
+const docu = [
   {
-    title: "Programme - UnFra (Version du 25 mars 2025)",
-    author: "Anthony RAVE et Mewenn RODET",
-    date: "2025-09-10",
-    type: "other",
-    description: "Analyses et théories politiques",
-    link: "essai/progunfra25mars2025.html"
+    title: "x",
+    author: "Anthony RAVE",
+    date: "2025-09-18",
+    type: "docu",
+    description: "x",
+    link: "docu/x.html"
   },
   {
-    title: "Haïku",
+    title: "y",
     author: "Anthony RAVE",
-    date: "2025-09-10",
-    type: "other",
-    description: "Poèmes courts",
-    link: "essai/haiku.html"
+    date: "2025-09-18",
+    type: "docu",
+    description: "y",
+    link: "docu/y.html"
   }
 ];
 
-const zone = document.getElementById("other-zone");
+const zone = document.getElementById("docu-zone");
 
-other.forEach(fic => {
+docu.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
@@ -31,9 +31,9 @@ other.forEach(fic => {
     <h3>${fic.title}</h3>
     <p><strong>Auteur :</strong> ${fic.author}</p>
     <p><strong>Date :</strong> ${fic.date}</p>
-    <p><strong>Type :</strong> Autre</p>
+    <p><strong>Type :</strong> Documentaire</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}">Lire le Texte</a>
+    <a href="${fic.link}">Lire le Documentaire</a>
   `;
 
   zone.appendChild(card);
