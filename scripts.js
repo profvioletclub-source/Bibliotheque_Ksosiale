@@ -1,5 +1,3 @@
-import { auth } from "./main.js";
-
 // 📖 Bonne lecture
 const links = document.querySelectorAll("main a");
 links.forEach(link => {
