@@ -1,9 +1,9 @@
-const essay = [
+const other = [
   {
     title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
-    type: "essay",
+    type: "other",
     description: "Analyses et théories politiques",
     link: "essai/progunfra25mars2025.html"
   },
@@ -11,13 +11,13 @@ const essay = [
     title: "Haïku",
     author: "Anthony RAVE",
     date: "2025-09-10",
-    type: "essay",
+    type: "other",
     description: "Poèmes courts",
     link: "essai/haiku.html"
   }
 ];
 
-const zone = document.getElementById("essay-zone");
+const zone = document.getElementById("other-zone");
 
 essay.forEach(fic => {
   const card = document.createElement("div");
