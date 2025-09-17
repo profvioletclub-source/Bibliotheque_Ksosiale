@@ -5,7 +5,7 @@ const inclassable = [
     date: "2025-09-10",
     type: "other",
     description: "Analyses et théories politiques",
-    link: "essai/progunfra25mars2025.html"
+    link: "progunfra25mars2025.html"
   },
   {
     title: "Haïku",
@@ -13,7 +13,7 @@ const inclassable = [
     date: "2025-09-10",
     type: "other",
     description: "Poèmes courts",
-    link: "essai/haiku.html"
+    link: "haiku.html"
   }
 ];
 
