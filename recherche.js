@@ -35,6 +35,14 @@ const allTexts = [
     link: "essai/progunfra25mars2025.html"
   },
   {
+    title: "Haïku",
+    author: "Anthony RAVE",
+    date: "2025-09-10",
+    type: "other",
+    description: "Poèmes courts",
+    link: "haiku.html"
+  }, 
+  {
     title: "1 - Le Collier d'Angela Merkel",
     author: "Anthony RAVE",
     date: "2025-09-17",
