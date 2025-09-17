@@ -1,19 +1,19 @@
 const inclassable = [
   {
-    title: "a",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
+    title: "Programme - UnFra (Version du 25 mars 2025)",
+    author: "Anthony RAVE et Mewenn RODET",
+    date: "2025-09-10",
     type: "other",
-    description: "a",
-    link: "?.html"
+    description: "Analyses et théories politiques",
+    link: "essai/progunfra25mars2025.html"
   },
   {
-    title: "w",
+    title: "Haïku",
     author: "Anthony RAVE",
-    date: "2025-09-18",
+    date: "2025-09-10",
     type: "other",
-    description: "w",
-    link: "la_lignee_des_profs/w.html"
+    description: "Poèmes courts",
+    link: "essai/haiku.html"
   }
 ];
 
