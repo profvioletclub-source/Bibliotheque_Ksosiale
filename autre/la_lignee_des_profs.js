@@ -3,7 +3,7 @@ const prof = [
     title: "z",
     author: "Anthony RAVE",
     date: "2025-09-18",
-    type: "prof",
+    type: "other",
     description: "z",
     link: "la_lignee_des_profs/z.html"
   },
@@ -11,7 +11,7 @@ const prof = [
     title: "w",
     author: "Anthony RAVE",
     date: "2025-09-18",
-    type: "prof",
+    type: "other",
     description: "w",
     link: "la_lignee_des_profs/w.html"
   }
