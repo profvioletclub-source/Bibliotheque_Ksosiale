@@ -1,58 +1,84 @@
-<form id="signup-form">
-  <input type="text" id="nom" placeholder="Nom" required>
-  <input type="text" id="prenom" placeholder="Prénom" required>
-  <input type="email" id="email" placeholder="Adresse e-mail" required>
-  <input type="text" id="pseudo" placeholder="Pseudo" required>
-  <input type="password" id="password" placeholder="Mot de passe" required>
-  <button type="submit">Créer mon compte</button>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription Ksosiale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+  <header>
+    <h1>📝 Inscription Ksosiale</h1>
+    <a href="index.html">← Retour à l’accueil</a>
+  </header>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
-    authDomain: "bibliothequekassossiale.firebaseapp.com",
-    projectId: "bibliothequekassossiale",
-    storageBucket: "bibliothequekassossiale.firebasestorage.app",
-    messagingSenderId: "1029476191647",
-    appId: "1:1029476191647:web:4da50f87d9aacc635b81aa",
-    measurementId: "G-83CKLXJJHD"
-  };
+  <section id="intro-inscription">
+    <h2>Bienvenue dans la Bibliothèque Ksosiale</h2>
+    <p>Crée ton compte pour publier, commenter et rejoindre l’univers des Ksos.</p>
+  </section>
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
+  <form id="signup-form">
+    <input type="text" id="nom" placeholder="Nom" required>
+    <input type="text" id="prenom" placeholder="Prénom" required>
+    <input type="email" id="email" placeholder="Adresse e-mail" required>
+    <input type="text" id="pseudo" placeholder="Pseudo" required>
+    <input type="password" id="password" placeholder="Mot de passe" required>
+    <button type="submit">Créer mon compte</button>
+  </form>
 
-  const form = document.getElementById("signup-form");
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+  </footer>
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const email = document.getElementById("email").value;
-    const pseudo = document.getElementById("pseudo").value;
-    const password = document.getElementById("password").value;
+    const firebaseConfig = {
+      apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
+      authDomain: "bibliothequekassossiale.firebaseapp.com",
+      projectId: "bibliothequekassossiale",
+      storageBucket: "bibliothequekassossiale.firebasestorage.app",
+      messagingSenderId: "1029476191647",
+      appId: "1:1029476191647:web:4da50f87d9aacc635b81aa",
+      measurementId: "G-83CKLXJJHD"
+    };
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const uid = userCredential.user.uid;
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-      await setDoc(doc(db, "users", uid), {
-        nom,
-        prenom,
-        email,
-        pseudo,
-        createdAt: new Date().toISOString()
-      });
+    const form = document.getElementById("signup-form");
 
-      alert("✅ Compte créé avec succès !");
-      window.location.href = "profil.html";
-    } catch (error) {
-      alert("❌ Erreur : " + error.message);
-    }
-  });
-</script>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nom = document.getElementById("nom").value;
+      const prenom = document.getElementById("prenom").value;
+      const email = document.getElementById("email").value;
+      const pseudo = document.getElementById("pseudo").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const uid = userCredential.user.uid;
+
+        await setDoc(doc(db, "users", uid), {
+          nom,
+          prenom,
+          email,
+          pseudo,
+          createdAt: new Date().toISOString()
+        });
+
+        alert("✅ Compte créé avec succès !");
+        window.location.href = "profil.html";
+      } catch (error) {
+        alert("❌ Erreur : " + error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>
