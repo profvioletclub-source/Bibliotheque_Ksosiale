@@ -76,9 +76,6 @@ blockquote {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   color: var(--color-text);
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 ol {
