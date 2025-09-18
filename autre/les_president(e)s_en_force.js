@@ -1,4 +1,4 @@
-import { ficCards } from './fic-data.js'
+import { ficCards } from '../fic-data.js'
 
 const zone = document.getElementById("president-zone");
 const filtered = ficCards.filter(fic => fic.type === "other-president");
