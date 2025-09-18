@@ -164,8 +164,15 @@ button:hover {
 
 #close-popup {
   margin-top: 20px;
-  padding
-
+  padding: 8px 12px;
+  font-size: 1em;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  
 .carousel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
