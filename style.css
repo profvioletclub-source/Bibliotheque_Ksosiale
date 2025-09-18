@@ -166,7 +166,7 @@ button:hover {
   margin-top: 20px;
   padding
 
-.fic-zone {
+.carousel {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
