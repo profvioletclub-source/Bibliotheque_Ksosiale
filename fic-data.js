@@ -6,14 +6,6 @@ export const ficCards = [
     type: "docu",
     description: "Quelle est la différence entre les différents types d'or ?",
     link: "documentaire/or_jaune_noir_bleu_quelle_difference_?.html"
-  },  
-  {
-    title: "y",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
-    type: "docu",
-    description: "y",
-    link: "documentaire/y.html"
   },
   {
     title: "Ksos 5.0 : Meurtre en Haute-Savoie",
@@ -30,5 +22,13 @@ export const ficCards = [
     type: "fanfiction",
     description: "Un an après le meurtre de Jules... 🔪",
     link: "fanfics/fanfics2.html"
-  }
+  },
+  {
+    title: "Le Voyage dans le Musée",
+    author: "Collectif",
+    date: "2025-10-01",
+    type: "roman",
+    description: "En ce dimanche de janvier, Michel se réveille et se réjouit de voir le soleil dont les rayons passent à travers les volets. Mais il va vite déchanter. Il a neigé toute la nuit. Ce qui ne l'arrange pas car il doit aller à Lyon voir son amie, mais il n'a pas monté les pneus neige. Il va devoir s'y atteler, mais rien ne va se passer comme il le souhaite et il n'aura pas le temps de tout faire. Il décide alors de rester à Cran Gevrier et d'aller se promener au bord du lac d'Annecy. Mais en traversant la place Chorus, un événement va totalement bouleverser son après-midi...",
+    link: "romans/voyagemusee.html"
+  } 
 ];
