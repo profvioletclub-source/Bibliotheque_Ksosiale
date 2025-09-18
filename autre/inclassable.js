@@ -1,25 +1,9 @@
-const inclassable = [
-  {
-    title: "Programme - UnFra (Version du 25 mars 2025)",
-    author: "Anthony RAVE et Mewenn RODET",
-    date: "2025-09-10",
-    type: "other",
-    description: "Analyses et théories politiques",
-    link: "progunfra25mars2025.html"
-  },
-  {
-    title: "Haïku",
-    author: "Anthony RAVE",
-    date: "2025-09-10",
-    type: "other",
-    description: "Poèmes courts",
-    link: "haiku.html"
-  }
-];
+import { ficCards } from './fic-data.js'
 
 const zone = document.getElementById("inclassable-zone");
+const filtered = ficCards.filter(fic => fic.type === "other-inclassable");
 
-inclassable.forEach(fic => {
+filtered.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
