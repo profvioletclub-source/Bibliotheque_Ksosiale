@@ -33,6 +33,7 @@ const identifierInput = document.getElementById("identifier");
 const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
+const signupBtn = document.getElementById("go-to-signup");
 const userInfo = document.getElementById("user-info");
 const debugZone = document.getElementById("debug");
 
@@ -77,8 +78,6 @@ logoutBtn.addEventListener("click", async () => {
   loginBtn.style.display = "inline-block";
   localStorage.removeItem("ksosPseudo");
 });
-
-const signupBtn = document.getElementById("go-to-signup");
 
 signupBtn.addEventListener("click", () => {
   window.location.href = "inscription.html";
