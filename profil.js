@@ -78,6 +78,12 @@ logoutBtn.addEventListener("click", async () => {
   localStorage.removeItem("ksosPseudo");
 });
 
+const signupBtn = document.getElementById("go-to-signup");
+
+signupBtn.addEventListener("click", () => {
+  window.location.href = "inscription.html";
+});
+
 // 👤 État utilisateur
 onAuthStateChanged(auth, async (user) => {
   if (user) {
