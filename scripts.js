@@ -37,4 +37,11 @@ window.addEventListener("load", () => {
       popup.style.display = "none";
     });
   }
+  // 👤 Affichage du pseudo utilisateur connecté sans modifier le lien
+  const userAccess = document.getElementById("user-access");
+  const pseudo = localStorage.getItem("ksosPseudo");
+
+  if (userAccess && pseudo) {
+    userAccess.textContent = pseudo;
+  }
 });
