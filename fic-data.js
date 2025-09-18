@@ -52,7 +52,7 @@ export const ficCards = [
     author: "Anthony RAVE",
     date: "2025-09-18",
     type: "other",
-    description: "z",
+    description: "z-profs",
     link: "la_lignee_des_profs/z.html"
   },
   {
@@ -60,14 +60,14 @@ export const ficCards = [
     author: "Anthony RAVE",
     date: "2025-09-18",
     type: "other",
-    description: "w",
+    description: "w-profs",
     link: "la_lignee_des_profs/w.html"
   },
   {
     title: "1 - Le Collier d'Angela Merkel",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other",
+    type: "other-president",
     description: "Angela Merkel compte sur l'aide de son collier...",
     link: "les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   },
@@ -75,7 +75,7 @@ export const ficCards = [
     title: "2 - La Bague d'Emmanuel Macron",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other",
+    type: "other-president",
     description: "Emmanuel Macron compte sur l'aide de sa bague...",
     link: "les_president(e)s_en_force/2_la_bague_d_emmanuel_macron.html"
   },
@@ -83,7 +83,7 @@ export const ficCards = [
     title: "3 - Le Pendentif d'Elizabeth II",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other",
+    type: "other-president",
     description: "Elizabeth II compte sur l'aide de son pendentif...",
     link: "les_president(e)s_en_force/3_le_pendentif_d_Elizabeth_II.html"
   }
