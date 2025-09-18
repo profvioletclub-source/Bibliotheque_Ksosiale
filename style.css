@@ -1,9 +1,9 @@
 :root {
-  --color-bg: #b1ebf7;
-  --color-text: #f64bfb;
-  --color-accent: #3dff74;
-  --color-link: #e89f3a;
-  --color-card: #f95349;
+  --color-bg: #f5f7fa;         /* fond doux gris-bleu */
+  --color-text: #2c3e50;       /* texte anthracite lisible */
+  --color-accent: #3498db;     /* bleu vif pour titres */
+  --color-link: #e67e22;       /* orange chaud pour les liens */
+  --color-card: #ecf0f1;       /* fond clair pour les cartes */
 }
 
 body {
