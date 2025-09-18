@@ -1,11 +1,3 @@
-// 📖 Bonne lecture
-//const links = document.querySelectorAll("main a");
-//links.forEach(link => {
-//  link.addEventListener("click", () => {
-//    alert("Bonne lecture ! 📖");
-//  });
-//});
-
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
