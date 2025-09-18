@@ -1,12 +1,22 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import {
   getAuth,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut
+  signOut,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+// ✅ Configuration Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAimK0CJsMXb1EqBtfqB36hrEunO4Ybk3c",
   authDomain: "bibliothequekassossiale.firebaseapp.com",
@@ -19,54 +29,88 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-// 🔐 Authentification
-const emailInput = document.getElementById("email");
+// ✅ Éléments DOM
+const identifierInput = document.getElementById("identifier");
 const passwordInput = document.getElementById("password");
-const signupBtn = document.getElementById("signup");
 const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
+const signupBtn = document.getElementById("go-to-signup");
 const userInfo = document.getElementById("user-info");
+const debugZone = document.getElementById("debug");
 
-if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
-  signupBtn.addEventListener("click", () => {
-    createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-      .then(() => alert("Compte créé !"))
-      .catch(error => alert(error.message));
-  });
+// 🔐 Connexion avec pseudo ou email
+loginBtn.addEventListener("click", async () => {
+  const identifier = identifierInput.value.trim();
+  const password = passwordInput.value;
 
-  loginBtn.addEventListener("click", () => {
-    signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-      .then(() => alert("Connecté !"))
-      .catch(error => alert(error.message));
-  });
-  logoutBtn.addEventListener("click", () => {
-    signOut(auth)
-      .then(() => {
-        alert("✅ Déconnecté !");
-        location.reload(); // Optionnel
-      })
-      .catch(error => alert("❌ Erreur : " + error.message));
-  });
-}
+  let emailToUse = identifier;
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identifier);
 
-// 🔄 État de connexion
-onAuthStateChanged(auth, user => {
+  if (!isEmail) {
+    try {
+      const q = query(collection(db, "users"), where("pseudo", "==", identifier));
+      const snapshot = await getDocs(q);
+
+      if (snapshot.empty) {
+        debugZone.innerHTML = `<p style="color:red;">❌ Aucun utilisateur trouvé avec le pseudo : <strong>${identifier}</strong></p>`;
+        return;
+      }
+
+      const userData = snapshot.docs[0].data();
+      emailToUse = userData.email;
+
+      debugZone.innerHTML = `<p style="color:green;">✅ Pseudo reconnu : <strong>${userData.pseudo}</strong><br>Email associé : ${emailToUse}</p>`;
+    } catch (error) {
+      debugZone.innerHTML = `<p style="color:red;">❌ Erreur Firestore : ${error.message}</p>`;
+      return;
+    }
+  }
+
+  try {
+    await signInWithEmailAndPassword(auth, emailToUse, password);
+    debugZone.innerHTML += `<p style="color:blue;">🔐 Connexion réussie !</p>`;
+  } catch (error) {
+    debugZone.innerHTML += `<p style="color:red;">❌ Erreur de connexion : ${error.message}</p>`;
+  }
+});
+
+// 🔓 Déconnexion
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+  userInfo.innerHTML = `<p style="color:red;">❌ Tu es maintenant déconnecté.</p>`;
+  logoutBtn.style.display = "none";
+  loginBtn.style.display = "inline-block";
+  localStorage.removeItem("ksosPseudo");
+});
+
+// 👤 État utilisateur
+onAuthStateChanged(auth, async (user) => {
   if (user) {
+    try {
+      const docRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
+        localStorage.setItem("ksosPseudo", data.pseudo);
+      } else {
+        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${user.email}</strong></p>`;
+        localStorage.setItem("ksosPseudo", user.email);
+      }
+    } catch (error) {
+      userInfo.innerHTML = `<p>✅ Connecté (erreur lors du chargement du pseudo)</p>`;
+      localStorage.setItem("ksosPseudo", user.email);
+    }
+
     logoutBtn.style.display = "inline-block";
-    signupBtn.style.display = "none";
     loginBtn.style.display = "none";
-    userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
-
-    // ✅ Étape 1 : enregistrer le pseudo/email dans localStorage
-    localStorage.setItem("ksosPseudo", user.email);
   } else {
+    userInfo.innerHTML = `<p style="color:red;">❌ Tu n'es pas connecté.</p>`;
     logoutBtn.style.display = "none";
-    signupBtn.style.display = "inline-block";
     loginBtn.style.display = "inline-block";
-    userInfo.innerHTML = "<p>Tu n'es pas connecté.</p>";
-
-    // 🧹 Nettoyage si déconnecté
     localStorage.removeItem("ksosPseudo");
   }
 });
