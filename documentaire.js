@@ -1,25 +1,28 @@
-const docu = [
-  {
-    title: "Or jaune, noir, bleu, quelle différence ?",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
-    type: "docu",
-    description: "Quelle est la différence entre les différents types d'or ?",
-    link: "documentaire/or_jaune_noir_bleu_quelle_difference_?.html"
-  },  
-  {
-    title: "y",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
-    type: "docu",
-    description: "y",
-    link: "documentaire/y.html"
-  }
-];
+//const docu = [
+ // {
+//    title: "Or jaune, noir, bleu, quelle différence ?",
+//    author: "Anthony RAVE",
+  //  date: "2025-09-18",
+//    type: "docu",
+//    description: "Quelle est la différence entre les différents types d'or ?",
+ //   link: "documentaire/or_jaune_noir_bleu_quelle_difference_?.html"
+ // },  
+//  {
+//    title: "y",
+  //  author: "Anthony RAVE",
+//    date: "2025-09-18",
+//    type: "docu",
+//    description: "y",
+//    link: "documentaire/y.html"
+//  }
+//];
+
+import { ficCards } from './fic-cards.js';
 
 const zone = document.getElementById("docu-zone");
+const filtered = ficCards.filter(fic => fic.type === "docu");
 
-docu.forEach(fic => {
+filtered.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
@@ -37,4 +40,4 @@ docu.forEach(fic => {
   `;
 
   zone.appendChild(card);
-})
+});
