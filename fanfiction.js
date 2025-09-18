@@ -1,25 +1,9 @@
-const fanfics = [
-  {
-    title: "Ksos 5.0 : Meurtre en Haute-Savoie",
-    author: "Copilot",
-    date: "2025-09-09",
-    type: "fanfiction",
-    description: "Quand les Ksos font face à la mort... 🔪",
-    link: "fanfics/fanfics1.html"
-  },
-  {
-    title: "Ksos 6.0 : Le Pacte des Cendres",
-    author: "Copilot",
-    date: "2025-09-12",
-    type: "fanfiction",
-    description: "Un an après le meurtre de Jules... 🔪",
-    link: "fanfics/fanfics2.html"
-  }
-];
+import { ficCards } from './fic-data.js'
 
 const zone = document.getElementById("fanfiction-zone");
+const filtered = ficCards.filter(fic => fic.type === "fanfiction");
 
-fanfics.forEach(fic => {
+filtered.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
@@ -38,5 +22,3 @@ fanfics.forEach(fic => {
 
   zone.appendChild(card);
 });
-
-// Tu peux réutiliser refreshFavButtons() ici si tu l’as en module
