@@ -35,7 +35,7 @@ export const ficCards = [
     title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
-    type: "other",
+    type: "other-inclassable",
     description: "Analyses et théories politiques",
     link: "progunfra25mars2025.html"
   },
@@ -43,7 +43,7 @@ export const ficCards = [
     title: "Haïku",
     author: "Anthony RAVE",
     date: "2025-09-10",
-    type: "other",
+    type: "other-inclassable",
     description: "Poèmes courts",
     link: "haiku.html"
   },
