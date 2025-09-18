@@ -1,25 +1,9 @@
-const prof = [
-  {
-    title: "z",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
-    type: "other",
-    description: "z",
-    link: "la_lignee_des_profs/z.html"
-  },
-  {
-    title: "w",
-    author: "Anthony RAVE",
-    date: "2025-09-18",
-    type: "other",
-    description: "w",
-    link: "la_lignee_des_profs/w.html"
-  }
-];
+import { ficCards } from './fic-data.js'
 
 const zone = document.getElementById("prof-zone");
+const filtered = ficCards.filter(fic => fic.type === "other-profs");
 
-prof.forEach(fic => {
+filtered.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
