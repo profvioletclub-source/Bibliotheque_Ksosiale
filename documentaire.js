@@ -5,7 +5,7 @@ const docu = [
     date: "2025-09-18",
     type: "docu",
     description: "Quelle est la différence entre les différents types d'or ?",
-    link: "document/or_jaune_noir_bleu_quelle_difference_?.html"
+    link: "documentaire/or_jaune_noir_bleu_quelle_difference_?.html"
   },  
   {
     title: "y",
@@ -13,7 +13,7 @@ const docu = [
     date: "2025-09-18",
     type: "docu",
     description: "y",
-    link: "document/y.html"
+    link: "documentaire/y.html"
   }
 ];
 
