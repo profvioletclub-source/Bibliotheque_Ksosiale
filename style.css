@@ -165,3 +165,10 @@ button:hover {
 #close-popup {
   margin-top: 20px;
   padding
+
+.fic-zone {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
