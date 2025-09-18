@@ -20,10 +20,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.body.insertAdjacentHTML("beforeend", `<p style='color:green;'>✅ Firebase initialisé dans profil.js</p>`);
-document.body.insertAdjacentHTML("beforeend", "<p style='color:red;'>✅ profil.js chargé</p>");
-document.body.insertAdjacentHTML("beforeend", `<p style='color:blue;'>🔐 Auth reçu : ${auth ? "oui" : "non"}</p>`);
-
 // 🔐 Authentification
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
@@ -32,19 +28,15 @@ const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
 const userInfo = document.getElementById("user-info");
 
-if (logoutBtn) {
-  document.body.insertAdjacentHTML("beforeend", "<p style='color:green;'>✅ Bouton logout détecté</p>");
-}
-
 if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
-  signupBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Créer un compte' actif</p>");
+//  signupBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Créer un compte' actif</p>");
   signupBtn.addEventListener("click", () => {
     createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Compte créé !"))
       .catch(error => alert(error.message));
   });
 
-  loginBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Se connecter' actif</p>");
+ // loginBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Se connecter' actif</p>");
   loginBtn.addEventListener("click", () => {
     signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Connecté !"))
@@ -62,7 +54,7 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
 
 // 🔄 État de connexion
 onAuthStateChanged(auth, user => {
-  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
+//  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
 
   if (user) {
     logoutBtn.style.display = "inline-block";
