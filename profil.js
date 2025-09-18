@@ -56,11 +56,16 @@ loginBtn.addEventListener("click", async () => {
 
       const userData = snapshot.docs[0].data();
       emailToUse = userData.email;
+    } catch (error) {
+      debugZone.innerHTML = `<p style="color:red;">❌ Erreur Firestore : ${error.message}</p>`;
+      return;
     }
   }
 
   try {
     await signInWithEmailAndPassword(auth, emailToUse, password);
+  } catch (error) {
+    debugZone.innerHTML = `<p style="color:red;">❌ Erreur de connexion : ${error.message}</p>`;
   }
 });
 
@@ -82,14 +87,14 @@ onAuthStateChanged(auth, async (user) => {
 
       if (!snapshot.empty) {
         const data = snapshot.docs[0].data();
-        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
+        userInfo.innerHTML = `<p>Connecté en tant que <strong>${data.pseudo}</strong></p>`;
         localStorage.setItem("ksosPseudo", data.pseudo);
       } else {
-        userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${user.email}</strong></p>`;
+        userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
         localStorage.setItem("ksosPseudo", user.email);
       }
     } catch (error) {
-      userInfo.innerHTML = `<p>✅ Connecté (erreur lors du chargement du pseudo)</p>`;
+      userInfo.innerHTML = `<p>Connecté (erreur lors du chargement du pseudo)</p>`;
       localStorage.setItem("ksosPseudo", user.email);
     }
 
