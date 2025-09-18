@@ -29,14 +29,12 @@ const logoutBtn = document.getElementById("logout");
 const userInfo = document.getElementById("user-info");
 
 if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
-//  signupBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Créer un compte' actif</p>");
   signupBtn.addEventListener("click", () => {
     createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Compte créé !"))
       .catch(error => alert(error.message));
   });
 
- // loginBtn.insertAdjacentHTML("afterend", "<p style='color:orange;'>🧪 Bouton 'Se connecter' actif</p>");
   loginBtn.addEventListener("click", () => {
     signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
       .then(() => alert("Connecté !"))
@@ -54,7 +52,6 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
 
 // 🔄 État de connexion
 onAuthStateChanged(auth, user => {
-//  document.body.insertAdjacentHTML("beforeend", `<p style='color:purple;'>👤 Utilisateur connecté : ${user ? user.email : "aucun"}</p>`);
 
   if (user) {
     logoutBtn.style.display = "inline-block";
