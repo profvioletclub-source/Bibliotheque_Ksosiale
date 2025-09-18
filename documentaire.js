@@ -17,7 +17,7 @@
 //  }
 //];
 
-import { ficCards } from './fic-cards.js';
+import { ficCards } from './fic-cards.js'
 
 const zone = document.getElementById("docu-zone");
 const filtered = ficCards.filter(fic => fic.type === "docu");
