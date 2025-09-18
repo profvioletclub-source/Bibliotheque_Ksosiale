@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebas
 import {
   getAuth,
   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
@@ -11,9 +10,7 @@ import {
   collection,
   query,
   where,
-  getDocs,
-  doc,
-  getDoc
+  getDocs
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 // ✅ Configuration Firebase
@@ -36,7 +33,6 @@ const identifierInput = document.getElementById("identifier");
 const passwordInput = document.getElementById("password");
 const loginBtn = document.getElementById("login");
 const logoutBtn = document.getElementById("logout");
-const signupBtn = document.getElementById("go-to-signup");
 const userInfo = document.getElementById("user-info");
 const debugZone = document.getElementById("debug");
 
@@ -89,11 +85,11 @@ logoutBtn.addEventListener("click", async () => {
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     try {
-      const docRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(docRef);
+      const q = query(collection(db, "users"), where("email", "==", user.email));
+      const snapshot = await getDocs(q);
 
-      if (docSnap.exists()) {
-        const data = docSnap.data();
+      if (!snapshot.empty) {
+        const data = snapshot.docs[0].data();
         userInfo.innerHTML = `<p>✅ Connecté en tant que <strong>${data.pseudo}</strong></p>`;
         localStorage.setItem("ksosPseudo", data.pseudo);
       } else {
