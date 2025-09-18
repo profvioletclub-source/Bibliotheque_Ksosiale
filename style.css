@@ -187,12 +187,32 @@ button:hover {
   margin-top: 20px;
 }
 
+/* 📝 Section d'introduction à l'inscription */
+#intro-inscription {
+  text-align: center;
+  margin: 40px auto 20px;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+#intro-inscription h2 {
+  font-size: 1.8em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+#intro-inscription p {
+  font-size: 1em;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
 /* 📋 Formulaire d'inscription Ksos */
 #signup-form {
   max-width: 500px;
-  margin: 40px auto;
+  margin: 0 auto 60px;
   padding: 30px;
-  background-color: #fdf6f0;
+  background-color: var(--color-card);
   border: 2px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
@@ -211,14 +231,14 @@ button:hover {
 }
 
 #signup-form input:focus {
-  border-color: #0077cc;
+  border-color: var(--color-accent);
   outline: none;
 }
 
 #signup-form button[type="submit"] {
   padding: 12px;
   font-size: 16px;
-  background-color: #0077cc;
+  background-color: var(--color-accent);
   color: white;
   border: none;
   border-radius: 6px;
@@ -229,5 +249,22 @@ button:hover {
 
 #signup-form button[type="submit"]:hover {
   background-color: #005fa3;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  #intro-inscription {
+    margin: 20px 10px;
+  }
+
+  #signup-form {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  #signup-form input,
+  #signup-form button {
+    font-size: 1em;
+  }
 }
 
