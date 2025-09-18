@@ -52,16 +52,21 @@ if (signupBtn && loginBtn && logoutBtn && emailInput && passwordInput) {
 
 // 🔄 État de connexion
 onAuthStateChanged(auth, user => {
-
   if (user) {
     logoutBtn.style.display = "inline-block";
     signupBtn.style.display = "none";
     loginBtn.style.display = "none";
     userInfo.innerHTML = `<p>Connecté en tant que <strong>${user.email}</strong></p>`;
+
+    // ✅ Étape 1 : enregistrer le pseudo/email dans localStorage
+    localStorage.setItem("ksosPseudo", user.email);
   } else {
     logoutBtn.style.display = "none";
     signupBtn.style.display = "inline-block";
     loginBtn.style.display = "inline-block";
     userInfo.innerHTML = "<p>Tu n'es pas connecté.</p>";
+
+    // 🧹 Nettoyage si déconnecté
+    localStorage.removeItem("ksosPseudo");
   }
 });
