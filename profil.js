@@ -56,19 +56,11 @@ loginBtn.addEventListener("click", async () => {
 
       const userData = snapshot.docs[0].data();
       emailToUse = userData.email;
-
-  //    debugZone.innerHTML = `<p style="color:green;">✅ Pseudo reconnu : <strong>${userData.pseudo}</strong><br>Email associé : ${emailToUse}</p>`;
-//    } catch (error) {
- //     debugZone.innerHTML = `<p style="color:red;">❌ Erreur Firestore : ${error.message}</p>`;
-  //    return;
     }
   }
 
   try {
     await signInWithEmailAndPassword(auth, emailToUse, password);
-//    debugZone.innerHTML += `<p style="color:blue;">🔐 Connexion réussie !</p>`;
-//  } catch (error) {
-//    debugZone.innerHTML += `<p style="color:red;">❌ Erreur de connexion : ${error.message}</p>`;
   }
 });
 
