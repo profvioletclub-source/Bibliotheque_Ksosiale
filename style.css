@@ -1,9 +1,10 @@
 :root {
-  --color-bg: #f5f7fa;         /* fond doux gris-bleu */
+  --color-bg: #b2ecfa;         /* fond bleu pastel */
   --color-text: #2c3e50;       /* texte anthracite lisible */
-  --color-accent: #b2ecfa;     /* bleu vif pour titres */
+  --color-accent: #3498db;     /* bleu vif pour titres */
   --color-link: #e67e22;       /* orange chaud pour les liens */
-  --color-card: #ecf0f1;       /* fond clair pour les cartes */
+  --color-card: #eaf6fb;       /* fond clair pour les cartes */
+  --color-header: #a0cfe0;     /* bleu-gris doux pour header/footer */ 
 }
 
 body {
@@ -15,18 +16,19 @@ body {
 }
 
 header, footer {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--color-header);
+  color: var(--color-text);
   text-align: center;
   padding: 10px;
 }
 
+
 h1 {
-  color: white;
+  color: var(--color-accent);
 }
 
 h2 {
-  color: #444;
+  color: var(--color-text);
   margin-top: 20px;
   font-size: 1.4em;
 }
@@ -73,6 +75,7 @@ blockquote {
   margin: 10px 0;
   background-color: var(--color-card);
   border-left: 5px solid var(--color-accent);
+  color: var(--color-text);
 }
 
 ol {
