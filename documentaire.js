@@ -1,6 +1,8 @@
-import { ficCards } from './fic-data.js'
+import { ficCards } from './fic-data.js';
 
 const zone = document.getElementById("docu-zone");
+const isConnected = localStorage.getItem("ksosPseudo") !== null;
+
 const filtered = ficCards.filter(fic => fic.type === "docu");
 
 filtered.forEach(fic => {
@@ -17,7 +19,7 @@ filtered.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Documentaire</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}" class="protected-link">Lire le Documentaire</a>
+    ${isConnected ? `<a href="${fic.link}">Lire le Documentaire</a>` : `<p style="color:red;">🔒 Connecte-toi pour accéder au document</p>`}
   `;
 
   zone.appendChild(card);
