@@ -17,7 +17,7 @@ filtered.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Documentaire</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}">Lire le Documentaire</a>
+    <a href="${fic.link}" class="protected-link">Lire le Documentaire</a>
   `;
 
   zone.appendChild(card);
