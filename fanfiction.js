@@ -1,6 +1,8 @@
-import { ficCards } from './fic-data.js'
+import { ficCards } from './fic-data.js';
 
 const zone = document.getElementById("fanfiction-zone");
+const isConnected = localStorage.getItem("ksosPseudo") !== null;
+
 const filtered = ficCards.filter(fic => fic.type === "fanfiction");
 
 filtered.forEach(fic => {
@@ -17,7 +19,7 @@ filtered.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Fan Fiction</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}">Lire la Fan fiction</a>
+    ${isConnected ? `<a href="${fic.link}">Lire la Fan Fiction</a>` : `<p style="color:red;">🔒 Connecte-toi pour accéderà la Fan Fiction</p>`}
   `;
 
   zone.appendChild(card);
