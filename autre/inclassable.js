@@ -1,6 +1,8 @@
-import { ficCards } from '../fic-data.js'
+import { ficCards } from '../fic-data.js';
 
 const zone = document.getElementById("inclassable-zone");
+const isConnected = localStorage.getItem("ksosPseudo") !== null;
+
 const filtered = ficCards.filter(fic => fic.type === "other-inclassable");
 
 filtered.forEach(fic => {
@@ -17,8 +19,8 @@ filtered.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Autre</p>
     <p>${fic.description}</p>
-    <a href="${fic.link}">Lire le Texte</a>
+    ${isConnected ? `<a href="${fic.link}">Lire le Texte</a>` : `<p style="color:red;">🔒 Connecte-toi pour accéder au Texte</p>`}
   `;
 
   zone.appendChild(card);
-})
+});
