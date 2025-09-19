@@ -3,7 +3,7 @@ import { ficCards } from '../fic-data.js'
 const zone = document.getElementById("president-zone");
 const filtered = ficCards.filter(fic => fic.type === "other-president");
 
-president.forEach(fic => {
+filtered.forEach(fic => {
   const card = document.createElement("div");
   card.className = "fic-card";
   card.setAttribute("data-title", fic.title);
