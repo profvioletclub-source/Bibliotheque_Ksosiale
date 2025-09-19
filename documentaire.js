@@ -22,33 +22,3 @@ filtered.forEach(fic => {
 
   zone.appendChild(card);
 });
-
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
-const auth = getAuth();
-let isConnected = false;
-
-onAuthStateChanged(auth, user => {
-  isConnected = !!user;
-});
-
-document.addEventListener("click", e => {
-  const link = e.target.closest(".protected-link");
-  if (link && !isConnected) {
-    e.preventDefault();
-    showPopup("Veuillez vous connecter pour accéder à ce Documentaire.");
-  }
-});
-
-function showPopup(message) {
-  const overlay = document.getElementById("popup-overlay");
-  const msg = document.getElementById("popup-message");
-  const closeBtn = document.getElementById("close-popup");
-
-  msg.textContent = message;
-  overlay.style.display = "flex";
-
-  closeBtn.onclick = () => {
-    overlay.style.display = "none";
-  };
-}
