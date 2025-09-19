@@ -51,16 +51,16 @@ export const ficCards = [
     title: "z",
     author: "Anthony RAVE",
     date: "2025-09-18",
-    type: "other",
-    description: "z-profs",
+    type: "other-profs",
+    description: "z",
     link: "la_lignee_des_profs/z.html"
   },
   {
     title: "w",
     author: "Anthony RAVE",
     date: "2025-09-18",
-    type: "other",
-    description: "w-profs",
+    type: "other-profs",
+    description: "w",
     link: "la_lignee_des_profs/w.html"
   },
   {
