@@ -8,6 +8,14 @@ export const ficCards = [
     link: "documentaire/or.html"
   },
   {
+    title: "Trump, le président qui tweet plus vite que son ombre",
+    author: "Anthony RAVE",
+    date: "2025-10-01",
+    type: "docu",
+    description: "Trump et Tweeter, une relation des plus intrigantes...",
+    link: "documentaire/trump.html"
+  },
+  {
     title: "Ksos 5.0 : Meurtre en Haute-Savoie",
     author: "Copilot",
     date: "2025-09-09",
