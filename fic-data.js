@@ -40,6 +40,14 @@ export const ficCards = [
     link: "romans/voyagemusee.html"
   },
   {
+    title:"L'Affaire Willweston - Partie 1",
+    author: "Anthony RAVE",
+    date: "2025-10-01",
+    type: "roman",
+    description: "Madame Willweston est mystérieusement assassinée... Andrew, notre enquêteur, va-t-il trouver le coupable ?",
+    link: "romans/willweston.html"
+  },
+  {
     title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
