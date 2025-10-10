@@ -53,7 +53,7 @@ export const ficCards = [
     date: "2026-01-01",
     type: "roman",
     description: "À venir",
-    link: "roman/pneumasis/pneumasis-ch1.html"
+    link: "romans/pneumasis/pneumasis-ch1.html"
   },
   {
     title: "Programme - UnFra (Version du 25 mars 2025)",
