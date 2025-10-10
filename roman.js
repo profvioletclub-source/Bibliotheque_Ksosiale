@@ -17,7 +17,7 @@ filtered.forEach(fic => {
     <h3>${fic.title}</h3>
     <p><strong>Auteur :</strong> ${fic.author}</p>
     <p><strong>Date :</strong> ${fic.date}</p>
-    <p><strong>Type :</strong> Documentaire</p>
+    <p><strong>Type :</strong> Roman</p>
     <p>${fic.description}</p>
     ${isConnected ? `<a href="${fic.link}">Lire le Roman</a>` : `<p style="color:red;">🔒 Connecte-toi pour accéder au Roman</p>`}
   `;
