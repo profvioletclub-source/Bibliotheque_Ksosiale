@@ -267,3 +267,27 @@ button:hover {
     font-size: 1em;
   }
 }
+
+.header-links {
+  list-style: none;       /* ❌ Supprime les puces */
+  padding: 0;             /* ❌ Supprime l’indentation */
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-links li {
+  margin-bottom: 8px;
+}
+
+.header-links a {
+  display: inline-block;
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-links a:hover {
+  text-decoration: underline;
+}
