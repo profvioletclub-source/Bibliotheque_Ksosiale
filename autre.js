@@ -3,7 +3,7 @@ import { ficCards } from './fic-data.js';
 const zone = document.getElementById("other-zone");
 const isConnected = localStorage.getItem("ksosPseudo") !== null;
 
-const filtered = ficCards.filter(fic => fic.type === "other-president");
+const filtered = ficCards.filter(fic => fic.type === "other");
 
 filtered.forEach(fic => {
   const card = document.createElement("div");
