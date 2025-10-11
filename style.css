@@ -269,7 +269,7 @@ button:hover {
 }
 
 .header-links {
-  list-style: none;       /* ❌ Supprime les puces */
+  list-style: none !important;       /* ❌ Supprime les puces */
   padding: 0;             /* ❌ Supprime l’indentation */
   margin-top: 15px;
   display: flex;
