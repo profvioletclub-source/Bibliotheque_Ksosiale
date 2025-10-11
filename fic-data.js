@@ -72,37 +72,19 @@ export const ficCards = [
     link: "haiku.html"
   },
   {
-    title: "1 - Le Fantôme des Roig",
+    title: "La Lignée des Profs",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other-profs",
-    description: "Quand un fantôme s'approche, que se passe-t-il ?",
-    link: "la_lignee_des_profs/1_le_fantome_des_roig.html"
-  },
-  {
-    title: "2 - Gallet et le Secret de Volta",
-    author: "Anthony RAVE",
-    date: "2025-09-17",
-    type: "other-profs",
-    description: "Volta a-t-il eu des héritiers ?",
-    link: "la_lignee_des_profs/2_Gallet_et_le_secret_de_Volta.html"
-  },
-  {
-    title: "3 - Singer et les Dinosaure",
-    author: "Anthony RAVE",
-    date: "2025-09-17",
-    type: "other-profs",
-    description: "Un os ? Qu'est-e qu'il fait là ?",
-    link: "la_lignee_des_profs/3_Singer_et_les_dinosaure.html"
+    type: "other",
+    description: "Quelles histoires les profs ont-ils vécuent ?",
+    link: "autre/la_lignee_des_profs/1_le_fantome_des_roig.html"
   },
   {
     title: "Les Président(e)s en force",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other-president",
+    type: "other",
     description: "Les Président(e)s comptent sur l'aide deleurs bijoux...",
-    link: "les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
+    link: "autre/les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   }
 ];
-
-
