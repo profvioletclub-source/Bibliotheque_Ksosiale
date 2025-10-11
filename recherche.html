@@ -12,6 +12,21 @@
   </header>
 
   <main>
+    <section id="search-form">
+      <input type="text" id="search-bar" placeholder="Rechercher par titre...">
+      <div id="advanced-search">
+        <input type="text" id="search-author" placeholder="Auteur">
+        <input type="date" id="search-date">
+        <select id="search-type">
+          <option value="">Type</option>
+          <option value="fanfiction">Fan Fiction</option>
+          <option value="roman">Roman</option>
+          <option value="docu">Documentaire</option>
+          <option value="other">Autre</option>
+        </select>
+        <button id="search-button">Rechercher</button>
+      </div>
+    </section>
     <section id="search-results"></section>
   </main>
 
