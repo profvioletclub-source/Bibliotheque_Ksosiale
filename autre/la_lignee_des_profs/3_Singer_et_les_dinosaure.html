@@ -37,11 +37,17 @@
   </main>
 
   <footer>
-    <div class="header-links">
-      <a href="2_Gallet_et_le_secret_de_Volta.html">2 - Gallet et le Secret de Volta</a>
-    </div>
     <p>© Ksos - Tous droits réservés</p>
     <p>Les fautes d'orthographes sont celle du manuscrit du 12 avril 2021.</p>
   </footer>
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
 </body>
 </html>
