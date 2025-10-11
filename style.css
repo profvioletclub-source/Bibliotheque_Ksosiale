@@ -269,15 +269,17 @@ button:hover {
 }
 
 .header-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  list-style: none;
+  padding: 0;
   margin-top: 15px;
-  gap: 8px;
+}
+
+.header-links li {
+  margin-bottom: 8px;
 }
 
 .header-links a {
-  display: block;
+  display: inline-block;
   color: var(--color-link);
   text-decoration: none;
   font-weight: bold;
