@@ -88,6 +88,14 @@ export const ficCards = [
     link: "la_lignee_des_profs/2_gallet_et_le_secret_de_volta.html"
   },
   {
+    title: "3 - Singer et les Dinosaure",
+    author: "Anthony RAVE",
+    date: "2025-09-17",
+    type: "other-profs",
+    description: "Un os ? Qu'est-e qu'il fait là ?",
+    link: "la_lignee_des_profs/3_Singer_et_les_dinosaure.html"
+  },
+  {
     title: "1 - Le Collier d'Angela Merkel",
     author: "Anthony RAVE",
     date: "2025-09-17",
