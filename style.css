@@ -317,3 +317,18 @@ button:hover {
 .textes-auteur a:hover {
   text-decoration: underline;
 }
+
+.search-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 20px auto;
+  text-align: center;
+}
+.search-button:hover {
+  background-color: #005fa3;
+}
