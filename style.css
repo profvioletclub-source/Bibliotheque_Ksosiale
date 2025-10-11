@@ -295,3 +295,25 @@ button:hover {
 .header-links a:hover {
   text-decoration: underline;
 }
+
+.liste-auteurs,
+.textes-auteur {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.liste-auteurs a,
+.textes-auteur a {
+  color: var(--color-link);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.liste-auteurs a:hover,
+.textes-auteur a:hover {
+  text-decoration: underline;
+}
