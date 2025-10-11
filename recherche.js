@@ -1,86 +1,18 @@
+import { ficCards } from "./fic-data.js";
+
 const resultsZone = document.getElementById("search-results");
 const query = JSON.parse(localStorage.getItem("ksos_search")) || {};
 
-const allTexts = [
-  {
-    title: "Ksos 5.0 : Meurtre en Haute-Savoie",
-    author: "Copilot",
-    date: "2025-09-09",
-    type: "fanfiction",
-    description: "Quand les Ksos font face à la mort... 🔪",
-    link: "fanfics/fanfics1.html"
-  },
-  {
-    title: "Ksos 6.0 : Le Pacte des Cendres",
-    author: "Copilot",
-    date: "2025-09-10",
-    type: "fanfiction",
-    description: "Un an après le meurtre de Jules... 🔪",
-    link: "fanfics/fanfics2.html"
-  },
-  {
-    title: "Le Voyage dans le Musée",
-    author: "Collectif",
-    date: "2025-10-01",
-    type: "roman",
-    description: "Michel se réveille et se réjouit de voir le soleil...",
-    link: "romans/voyagemusee.html"
-  },
-  {
-    title: "Programme - UnFra",
-    author: "Anthony RAVE et Mewenn RODET",
-    date: "2025-09-10",
-    type: "essay",
-    description: "Analyses et théories politiques",
-    link: "essai/progunfra25mars2025.html"
-  },
-  {
-    title: "Haïku",
-    author: "Anthony RAVE",
-    date: "2025-09-10",
-    type: "other",
-    description: "Poèmes courts",
-    link: "haiku.html"
-  }, 
-  {
-    title: "La Lignée des Profs - 1 - Le Collier d'Angela Merkel",
-    author: "Anthony RAVE",
-    date: "2025-09-17",
-    type: "other",
-    description: "Angela Merkel compte sur l'aide de son collier...",
-    link: "les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
-  },
-  {
-    title: "La Lignée des Profs - 2 - La Bague d'Emmanuel Macron",
-    author: "Anthony RAVE",
-    date: "2025-09-17",
-    type: "other",
-    description: "Emmanuel Macron compte sur l'aide de sa bague...",
-    link: "les_president(e)s_en_force/2_la_bague_d_emmanuel_macron.html"
-  },
-  {
-    title: "La Lignée des Profs - 3 - Le Pendentif d'Elizabeth II",
-    author: "Anthony RAVE",
-    date: "2025-09-17",
-    type: "other",
-    description: "Elizabeth II compte sur l'aide de son pendentif...",
-    link: "les_president(e)s_en_force/3_le_pendentif_d_Elizabeth_II.html"
-  }
-];
-
-// 🔧 Nettoyage des critères
 const clean = (val) => val?.toLowerCase().trim() || "";
 
-const filtered = allTexts.filter(fic => {
+const filtered = ficCards.filter(fic => {
   const titleMatch = !query.title || fic.title.toLowerCase().includes(clean(query.title));
   const authorMatch = !query.author || fic.author.toLowerCase().includes(clean(query.author));
   const dateMatch = !query.date || fic.date === query.date;
-  const typeMatch = !query.type || fic.type.toLowerCase() === clean(query.type);
-
+  const typeMatch = !query.type || fic.type.toLowerCase().includes(clean(query.type));
   return titleMatch && authorMatch && dateMatch && typeMatch;
 });
 
-// 🧾 Affichage des résultats
 if (filtered.length === 0) {
   resultsZone.innerHTML = `<p style="color:red;">❌ Aucun résultat trouvé pour ta recherche.</p>`;
 } else {
