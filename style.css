@@ -269,8 +269,8 @@ button:hover {
 }
 
 .header-links {
-  list-style: none !important;       /* ❌ Supprime les puces */
-  padding: 0;             /* ❌ Supprime l’indentation */
+  list-style: none !important;   /* 🔒 Supprime les puces */
+  padding: 0;
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -279,6 +279,10 @@ button:hover {
 
 .header-links li {
   margin-bottom: 8px;
+}
+
+.header-links li::marker {
+  content: none;                 /* 🔒 Supprime les marqueurs (puces) */
 }
 
 .header-links a {
