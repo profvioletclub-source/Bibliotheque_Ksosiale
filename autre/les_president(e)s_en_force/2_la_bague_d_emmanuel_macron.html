@@ -40,5 +40,14 @@
     <p>© Ksos - Tous droits réservés</p>
     <p>Les fautes d'orthographes sont celle du manuscrit du 12 avril 2021.</p>
   </footer>
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
 </body>
 </html>
