@@ -16,6 +16,14 @@ export const ficCards = [
     link: "documentaire/trump.html"
   },
   {
+    title: "Poutine, 22 ans de règne et un pouvoir infini",
+    author: "Anthony RAVE",
+    date: "2025-10-11",
+    type: "docu",
+    description: "Au lendemain du début de l''Opération spéciale' en Ukraine, nous faisons le point",
+    link: "documentaire/poutine.html"
+  },
+  {
     title: "Ksos 5.0 : Meurtre en Haute-Savoie",
     author: "Copilot",
     date: "2025-09-09",
