@@ -269,9 +269,12 @@ button:hover {
 }
 
 .header-links {
-  list-style: none;
-  padding: 0;
+  list-style: none;       /* ❌ Supprime les puces */
+  padding: 0;             /* ❌ Supprime l’indentation */
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .header-links li {
