@@ -85,7 +85,7 @@ export const ficCards = [
     date: "2025-09-17",
     type: "other-profs",
     description: "Volta a-t-il eu des héritiers ?",
-    link: "la_lignee_des_profs/2_Gallet_et_le_secret_de_volta.html"
+    link: "la_lignee_des_profs/2_Gallet_et_le_secret_de_Volta.html"
   },
   {
     title: "3 - Singer et les Dinosaure",
