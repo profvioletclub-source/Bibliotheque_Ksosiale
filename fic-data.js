@@ -72,20 +72,20 @@ export const ficCards = [
     link: "haiku.html"
   },
   {
-    title: "z",
+    title: "1 - Le Fantôme des Roig",
     author: "Anthony RAVE",
-    date: "2025-09-18",
+    date: "2025-09-17",
     type: "other-profs",
-    description: "z",
-    link: "la_lignee_des_profs/z.html"
+    description: "Quand un fantôme s'approche, que se passe-t-il ?",
+    link: "la_lignee_des_profs/1_le_fantome_des_roig.html"
   },
   {
-    title: "w",
+    title: "2 - Gallet et le Secret de Volta",
     author: "Anthony RAVE",
-    date: "2025-09-18",
+    date: "2025-09-17",
     type: "other-profs",
-    description: "w",
-    link: "la_lignee_des_profs/w.html"
+    description: "Volta a-t-il eu des héritiers ?",
+    link: "la_lignee_des_profs/2_gallet_et_le_secret_de_volta.html"
   },
   {
     title: "1 - Le Collier d'Angela Merkel",
