@@ -102,7 +102,13 @@ export const ficCards = [
     type: "other",
     description: "Les Président(e)s comptent sur l'aide deleurs bijoux...",
     link: "autre/les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
-  }
+  },
   {
-  
+    title: "Un Assassin à Démotz",
+    author: "Anthony RAVE",
+    date: "2025-10-12",
+    type: "other",
+    description: "Quand un meurtre à lieu au collège...",
+    link: "autre/un_assassin_a_demotz/un_assassin_a_demotz-ch1.html"
+  }
 ];
