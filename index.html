@@ -62,5 +62,10 @@
 
   <!-- 🔥 Script principal -->
   <script type="module" src="scripts.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  </script>
 </body>
 </html>
