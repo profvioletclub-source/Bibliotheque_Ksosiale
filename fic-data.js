@@ -110,5 +110,13 @@ export const ficCards = [
     type: "other",
     description: "Quand un meurtre à lieu au collège...",
     link: "autre/un_assassin_a_demotz/un_assassin_a_demotz-ch1.html"
+  },
+  {
+    title: "Le Combot des Profs",
+    authkr: "Anthony RAVE",
+    date: "2025-10-12",
+    type: "other",
+    description: "Les Profs n'ont pas cessé d'agir...",
+    link: "autre/le_combot_des_profs/1_meurtre_a_rome.html"
   }
 ];
