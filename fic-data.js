@@ -103,4 +103,6 @@ export const ficCards = [
     description: "Les Président(e)s comptent sur l'aide deleurs bijoux...",
     link: "autre/les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   }
+  {
+  
 ];
