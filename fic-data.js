@@ -64,6 +64,14 @@ export const ficCards = [
     link: "romans/pneumasis/pneumasis-ch1.html"
   },
   {
+    title: "Une Idylle Scolaire",
+    authir: "Anthony RAVE",
+    date: "2025-10-12",
+    type: "roman",
+    description: "Quand un mauvais élève doit suivre des cours privé pour finir l'année...",
+    link: "romans/idylle.html"
+  },
+  {
     title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
