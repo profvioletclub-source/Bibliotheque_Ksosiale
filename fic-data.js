@@ -80,6 +80,14 @@ export const ficCards = [
     link: "autre/les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   },
   {
+    title: "Meurtre au Collège",
+    author: "Anthony RAVE",
+    date: "2025-10-13",
+    type: "other",
+    description: "Quand le collège fait face à la mort, une enquête débute...",
+    link: "romans/meurtre_au_college/meurtre_au_college_ch1.html"
+  },
+  {
     title:"Or jaune, noir, bleu, quelle différence ?",
     author: "Anthony RAVE",
     date: "2025-09-18",
