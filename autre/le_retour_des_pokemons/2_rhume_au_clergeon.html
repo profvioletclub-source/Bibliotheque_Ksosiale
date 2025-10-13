@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Retour des Pokemons - 2 - Rhume au Clergeon</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <h1>Le Retour des Pokemons</h1>
+    <h1>2</h1>
+    <h1>Rhume au Clergeon</h1>
+    <p><em>Publié le 13 octobre 2025</em></p>
+    <label for="chapitre-select">📚 Accéder à un chapitre :</label>
+    <select id="chapitre-select">
+      <option value="">-- Choisir un chapitre --</option>
+      <option value="../../autre.html">← Retour aux Autres</option>
+      <option value="1_quoi_un_pikachu.html">1 - Quoi ?!? Un Pikachu ?!?</option>
+      <option value="3_le_secret_de_la_A115.html">3 - Le secret de la A115</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <p>Julien, notre ami, se baladait au Clergeon.</p>
+      <p>En ce 31 novembre, il devait bien y avoir 10 cm de neige.</p>
+      <p>En se baladant avec Pikachu à ses côtés, le jeune homme entendit du bruit dans un buisson.</p>
+      <p>Il s'approcha, encore plus près, encore plus près, encore plus près…</p>
+      <p>Et là, il vit un Polarhume. Le pauvre secouait les branches en éternuant.</p>
+      <p>Julien décida de le capturer. Il demanda à Pikachu de convaincre Polarhume d'accepter d'être capturé.</p>
+      <p>Ce fut un succès.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+  </footer>
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
+</body>
+</html>
