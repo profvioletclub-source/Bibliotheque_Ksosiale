@@ -72,10 +72,18 @@ export const ficCards = [
     link: "romans/idylle.html"
   },
   {
+    title: "Le Monstre du Marais",
+    author: "Anthony RAVE",
+    date: "2025-10-13",
+    type: "roman",
+    description: "Une Nouvelle d'Horreur...",
+    link: "romans/le_monstre_du_marais.html"
+  },
+  {
     title: "Programme - UnFra (Version du 25 mars 2025)",
     author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
-    type: "other-inclassable",
+    type: "other",
     description: "Analyses et théories politiques",
     link: "progunfra25mars2025.html"
   },
@@ -83,7 +91,7 @@ export const ficCards = [
     title: "Haïku",
     author: "Anthony RAVE",
     date: "2025-09-10",
-    type: "other-inclassable",
+    type: "other",
     description: "Poèmes courts",
     link: "haiku.html"
   },
