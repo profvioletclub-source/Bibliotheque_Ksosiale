@@ -75,9 +75,9 @@ export const ficCards = [
     title: "Le Monstre du Marais",
     author: "Anthony RAVE",
     date: "2025-10-13",
-    type: "roman",
+    type: "other",
     description: "Une Nouvelle d'Horreur...",
-    link: "romans/le_monstre_du_marais.html"
+    link: "autre/le_monstre_du_marais.html"
   },
   {
     title: "Programme - UnFra (Version du 25 mars 2025)",
@@ -85,7 +85,7 @@ export const ficCards = [
     date: "2025-09-10",
     type: "other",
     description: "Analyses et théories politiques",
-    link: "progunfra25mars2025.html"
+    link: "autre/progunfra25mars2025.html"
   },
   {
     title: "Haïku",
@@ -93,7 +93,7 @@ export const ficCards = [
     date: "2025-09-10",
     type: "other",
     description: "Poèmes courts",
-    link: "haiku.html"
+    link: "autre/haiku.html"
   },
   {
     title: "La Lignée des Profs",
