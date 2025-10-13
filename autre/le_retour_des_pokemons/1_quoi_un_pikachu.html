@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Retour des Pokemons - 1 - Quoi ?!? Un Pikachu ?!?</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <h1>Le Retour des Pokemons</h1>
+    <h1>1</h1>
+    <h1>Quoi ?!? Un Pikachu ?!?</h1>
+    <p><em>Publié le 12 octobre 2025</em></p>
+    <label for="chapitre-select">📚 Accéder à un chapitre :</label>
+    <select id="chapitre-select">
+      <option value="">-- Choisir un chapitre --</option>
+      <option value="../../autre.html">← Retour aux Autres</option>
+      <option value="2_rhume_au_clergeon.html">2 - Rhume au Clergeon</option>
+      <option value="3_le_secret_de_la_A115.html">3 - Le secret de la A115</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <p><strong>Julien, 4B :</strong></p>
+      <p>En se baladant, Julien découvrit un Pikachu.</p>
+      <quitenote>« Quoi ?!? Un Pikachu ?!? »</quitenote>
+      <p>Et oui, Julien venait de découvrir que les Pokémon existaient toujours.</p>
+      <p>Il décida de le capturer, ce qui fut plus facile que prévu car le petit Pokémon se laissa facilement attraper.</p>
+      <p>Julien décida qu'à partir de ce jour, il allait devenir dresseur Pokémon et en capturer le plus possible — avec, bien entendu, l'aide de Pikachu.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+  </footer>
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
+</body>
+</html>
