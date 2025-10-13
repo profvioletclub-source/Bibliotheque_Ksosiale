@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Meurtre au collège - Chapitre 4 : Le mystère commence</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Meurtre au collège</h1>
+    <h2>Chapitre 4 : Le mystère commence</h2>
+    <p><em>Publié le 12 avril 2021</em></p>
+    <label for="chapitre-select">📚 Accéder à un chapitre :</label>
+    <select id="chapitre-select">
+      <option value="">-- Choisir un chapitre --</option>
+      <option value="../roman.html">← Retour aux Romans</option>
+      <option value="meurtre_au_college_ch1.html">1 - La découverte</option>
+      <option value="meurtre_au_college_ch2.html">2 - La descente</option>
+      <option value="meurtre_au_college_ch3.html">3 - Le cadavre</option>
+      <option value="meurtre_au_college_ch5.html">5 - De pire en pire</option>
+      <option value="meurtre_au_college_ch6.html">6 - Premier interrogatoire</option>
+      <option value="meurtre_au_college_ch7.html">7 - Autres interrogatoires</option>
+      <option value="meurtre_au_college_ch8.html">8 - Résultat des interrogatoires</option>
+      <option value="meurtre_au_college_ch9.html">9 - Interrogatoire de la sœur</option>
+      <option value="meurtre_au_college_ch10.html">10 - Les mails</option>
+      <option value="meurtre_au_college_ch11.html">11 - Le déclic</option>
+      <option value="meurtre_au_college_ch12.html">12 - L'urgence</option>
+      <option value="meurtre_au_college_ch13.html">13 - L'arme</option>
+      <option value="meurtre_au_college_ch14.html">14 - La liste s'allonge</option>
+      <option value="meurtre_au_college_ch15.html">15 - La solution</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <p>À la fin de la journée de cours, composée d’une heure de Français, une de Mathématiques, une d’Histoire-Géo et deux de Sport, j’avais cinq suspects, tous des élèves : Albert, Antonin, Éric, Alice et Élise.</p>
+      <p>Mais cela ne m’empêchait pas de penser qu’ils pouvaient être plusieurs, ou que le coupable pouvait être quelqu’un d’autre. J’ai donc décidé de prendre des notes, à commencer par leur nom : Albert, Antonin, Éric, Alice et Élise.</p>
+
+      <p><strong>Le mardi et le mercredi</strong>, j’ai beau chercher, réfléchir, observer leur comportement… je ne trouve rien qui me permette d’avancer dans mon enquête.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+    <p>Les fautes d'orthographe sont celles du manuscrit du 12 avril 2021.</p>
+  </footer>
+
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
+</body>
+</html>
