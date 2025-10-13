@@ -113,10 +113,18 @@ export const ficCards = [
   },
   {
     title: "Le Combot des Profs",
-    authkr: "Anthony RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-12",
     type: "other",
     description: "Les Profs n'ont pas cessé d'agir...",
     link: "autre/le_combot_des_profs/1_meurtre_a_rome.html"
+  },
+  {
+    title: "Le Retour des Pokemons",
+    author: "Anthony RAVE",
+    date: "2025-10-13",
+    type: "other",
+    description: "Quand les Pokemons apparaissent en Haute-Savoie...",
+    link: "autre/le_retour_des_pokemons/1_quoi_un_pikachu.html"
   }
 ];
