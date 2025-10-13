@@ -65,7 +65,7 @@ export const ficCards = [
   },
   {
     title: "Une Idylle Scolaire",
-    authir: "Anthony RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-12",
     type: "roman",
     description: "Quand un mauvais élève doit suivre des cours privé pour finir l'année...",
