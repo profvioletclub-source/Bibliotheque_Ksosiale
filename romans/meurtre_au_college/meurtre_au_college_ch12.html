@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Meurtre au collège - Chapitre 12 : L'urgence</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Meurtre au collège</h1>
+    <h2>Chapitre 12 : L'urgence</h2>
+    <p><em>Publié le 13 octobre 2025</em></p>
+    <label for="chapitre-select">📚 Accéder à un chapitre :</label>
+    <select id="chapitre-select">
+      <option value="">-- Choisir un chapitre --</option>
+      <option value="../../roman.html">← Retour aux Romans</option>
+      <option value="meurtre_au_college_ch1.html">1 - La découverte</option>
+      <option value="meurtre_au_college_ch2.html">2 - La descente</option>
+      <option value="meurtre_au_college_ch3.html">3 - Le cadavre</option>
+      <option value="meurtre_au_college_ch4.html">4 - Le mystère commence</option>
+      <option value="meurtre_au_college_ch5.html">5 - De pire en pire</option>
+      <option value="meurtre_au_college_ch6.html">6 - Premier interrogatoire</option>
+      <option value="meurtre_au_college_ch7.html">7 - Autres interrogatoires</option>
+      <option value="meurtre_au_college_ch8.html">8 - Résultat des interrogatoires</option>
+      <option value="meurtre_au_college_ch9.html">9 - Interrogatoire de la sœur</option>
+      <option value="meurtre_au_college_ch10.html">10 - Les mails</option>
+      <option value="meurtre_au_college_ch11.html">11 - Le déclic</option>
+      <option value="meurtre_au_college_ch13.html">13 - L'arme</option>
+      <option value="meurtre_au_college_ch14.html">14 - La liste s'allonge</option>
+      <option value="meurtre_au_college_ch15.html">15 - La solution</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <p>En arrivant au rang pour attendre M. Poulon, les surveillantes sont venues nous annoncer que M. Poulon n’était pas là pour une raison inconnue.</p>
+      <p>Nous étions donc en récréation en attendant le cours suivant.</p>
+
+      <p>Je partis donc à la scène du crime où je découvris, juste à côté du corps de Sarah, le corps de M. Poulon.</p>
+
+      <p>Incroyable — ce n’était donc pas lui !</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Ksos - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const select = document.getElementById("chapitre-select");
+    select.addEventListener("change", function () {
+      const url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
+</body>
+</html>
