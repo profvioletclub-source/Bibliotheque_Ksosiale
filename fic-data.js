@@ -83,7 +83,7 @@ export const ficCards = [
     title: "Meurtre au Collège",
     author: "Anthony RAVE",
     date: "2025-10-13",
-    type: "other",
+    type: "roman",
     description: "Quand le collège fait face à la mort, une enquête débute...",
     link: "romans/meurtre_au_college/meurtre_au_college_ch1.html"
   },
