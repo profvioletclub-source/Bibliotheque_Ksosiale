@@ -32,7 +32,7 @@ export const ficCards = [
     link: "autre/la_lignee_des_profs/1_le_fantome_des_roig.html"
   },
   {
-    title:"L'Affaire Willweston - Partie 1",
+    title:"L'Affaire Willweston",
     author: "Anthony RAVE",
     date: "2025-10-01",
     type: "roman",
