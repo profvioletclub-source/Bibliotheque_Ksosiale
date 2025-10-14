@@ -86,6 +86,7 @@ signupBtn.addEventListener("click", () => {
 // 👤 État utilisateur
 onAuthStateChanged(auth, async (user) => {
   if (user) {
+    // 🔒 L'utilisateur est connecté
     try {
       const q = query(collection(db, "users"), where("email", "==", user.email));
       const snapshot = await getDocs(q);
@@ -103,12 +104,21 @@ onAuthStateChanged(auth, async (user) => {
       localStorage.setItem("ksosPseudo", user.email);
     }
 
-    logoutBtn.style.display = "inline-block";
+    // ✅ Masquer le formulaire et le bouton "Créer un compte"
+    identifierInput.style.display = "none";
+    passwordInput.style.display = "none";
     loginBtn.style.display = "none";
+    signupBtn.style.display = "none";
+    logoutBtn.style.display = "inline-block";
+
   } else {
+    // 🔓 L'utilisateur n'est pas connecté
     userInfo.innerHTML = `<p style="color:red;">❌ Tu n'es pas connecté.</p>`;
     logoutBtn.style.display = "none";
     loginBtn.style.display = "inline-block";
+    signupBtn.style.display = "inline-block";
+    identifierInput.style.display = "inline-block";
+    passwordInput.style.display = "inline-block";
     localStorage.removeItem("ksosPseudo");
   }
 });
