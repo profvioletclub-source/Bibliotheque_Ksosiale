@@ -27,7 +27,7 @@ export const ficCards = [
     title:"La Lignée des Profs",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other",
+    type: "serie",
     description: "Quelles histoires les profs ont-ils vécuent ?",
     link: "autre/la_lignee_des_profs/1_le_fantome_des_roig.html"
   },
@@ -43,7 +43,7 @@ export const ficCards = [
     title:"Le Combot des Profs",
     author: "Anthony RAVE",
     date: "2025-10-12",
-    type: "other",
+    type: "serie",
     description: "Les Profs n'ont pas cessé d'agir...",
     link: "autre/le_combot_des_profs/1_meurtre_a_rome.html"
   },
@@ -59,7 +59,7 @@ export const ficCards = [
     title:"Le Retour des Pokemons",
     author: "Anthony RAVE",
     date: "2025-10-13",
-    type: "other",
+    type: "serie",
     description: "Quand les Pokemons apparaissent en Haute-Savoie...",
     link: "autre/le_retour_des_pokemons/1_quoi_un_pikachu.html"
   },
@@ -75,7 +75,7 @@ export const ficCards = [
     title:"Les Président(e)s en force",
     author: "Anthony RAVE",
     date: "2025-09-17",
-    type: "other",
+    type: "serie",
     description: "Les Président(e)s comptent sur l'aide deleurs bijoux...",
     link: "autre/les_president(e)s_en_force/1_le_collier_d_Angela_Merkel.html"
   },
@@ -131,7 +131,7 @@ export const ficCards = [
     title:"Un Assassin à Démotz",
     author: "Anthony RAVE",
     date: "2025-10-12",
-    type: "other",
+    type: "serie",
     description: "Quand un meurtre à lieu au collège...",
     link: "autre/un_assassin_a_demotz/un_assassin_a_demotz-ch1.html"
   },
