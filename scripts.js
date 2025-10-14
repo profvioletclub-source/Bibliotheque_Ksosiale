@@ -45,3 +45,15 @@ window.addEventListener("load", () => {
     userAccess.textContent = pseudo;
   }
 });
+
+const toggleBtn = document.getElementById("sidebar-toggle");
+const sidebar = document.getElementById("sidebar");
+const closeBtn = document.getElementById("close-sidebar");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+});
