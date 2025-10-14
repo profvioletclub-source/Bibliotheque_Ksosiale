@@ -337,8 +337,8 @@ button:hover {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  background: black;
-  color: white;
+  background: var(--color-text); /* anthracite lisible */
+  color: var(--color-bg);        /* bleu pastel pour contraste */
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
@@ -352,12 +352,12 @@ button:hover {
   left: -100%;
   width: 250px;
   height: 100%;
-  background-color: var(--color-bg); /* Étape 1 : couleur du fond du site */
-  color: white;
+  background-color: var(--color-bg); /* fond bleu pastel */
+  color: var(--color-text);          /* texte anthracite */
   padding: 1rem;
   transition: left 0.3s ease, opacity 0.3s ease;
   z-index: 999;
-  visibility: hidden; /* Étape 3 : invisible avant ouverture */
+  visibility: hidden;
   opacity: 0;
   border: none;
   box-shadow: none;
@@ -372,7 +372,7 @@ button:hover {
 #sidebar button#close-sidebar {
   background: none;
   border: none;
-  color: white;
+  color: var(--color-text); /* anthracite */
   font-size: 1.2rem;
   float: right;
   cursor: pointer;
@@ -388,6 +388,11 @@ button:hover {
 }
 
 #sidebar ul li a {
-  color: white;
+  color: var(--color-link); /* orange chaud pour les liens */
   text-decoration: none;
+  font-weight: bold;
+}
+
+#sidebar ul li a:hover {
+  color: var(--color-accent); /* bleu vif au survol */
 }
