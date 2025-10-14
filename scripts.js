@@ -57,3 +57,13 @@ toggleBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("open");
 });
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.add("open");
+  toggleBtn.style.display = "none";
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+  toggleBtn.style.display = "inline-block";
+});
