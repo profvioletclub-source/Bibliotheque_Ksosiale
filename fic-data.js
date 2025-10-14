@@ -95,14 +95,14 @@ export const ficCards = [
     description: "Quelle est la différence entre les différents types d'or ?",
     link: "documentaire/or.html"
   },
-  {
-    title:"Pneumasis",
-    author: "Anthony RAVE",
-    date: "2026-01-01",
-    type: "roman",
-    description: "À venir",
-    link: "romans/pneumasis/pneumasis-ch1.html"
-  },
+//  {
+//    title:"Pneumasis",
+//    author: "Anthony RAVE",
+//    date: "2026-01-01",
+//    type: "roman",
+//    description: "À venir",
+//    link: "romans/pneumasis/pneumasis-ch1.html"
+//  },
   {
     title:"Poutine, 22 ans de règne et un pouvoir infini",
     author: "Anthony RAVE",
