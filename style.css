@@ -396,3 +396,18 @@ button:hover {
 #sidebar ul li a:hover {
   color: var(--color-accent); /* bleu vif au survol */
 }
+
+.rating {
+  margin-top: 8px;
+  font-size: 1.5em;
+  color: gold;
+  cursor: pointer;
+}
+
+.rating .star {
+  padding: 0 2px;
+}
+
+.rating .star.active {
+  color: orange;
+}
