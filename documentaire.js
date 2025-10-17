@@ -29,3 +29,25 @@ filtered.forEach(fic => {
 
   zone.appendChild(card);
 });
+
+if (isConnected) {
+  document.querySelectorAll('.rating').forEach(rating => {
+    const title = rating.dataset.title;
+    const saved = localStorage.getItem(`rating-${title}`);
+    if (saved) highlightStars(rating, parseInt(saved));
+
+    rating.querySelectorAll('.star').forEach(star => {
+      star.addEventListener('click', () => {
+        const value = parseInt(star.dataset.star);
+        localStorage.setItem(`rating-${title}`, value);
+        highlightStars(rating, value);
+      });
+    });
+  });
+
+  function highlightStars(rating, value) {
+    rating.querySelectorAll('.star').forEach(star => {
+      star.classList.toggle('active', parseInt(star.dataset.star) <= value);
+    });
+  }
+}
