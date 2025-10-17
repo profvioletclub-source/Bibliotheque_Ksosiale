@@ -19,7 +19,12 @@ filtered.forEach(fic => {
     <p><strong>Date :</strong> ${fic.date}</p>
     <p><strong>Type :</strong> Série</p>
     <p>${fic.description}</p>
-    ${isConnected ? `<a href="${fic.link}">Lire la Série</a>` : `<p style="color:red;">🔒 Connecte-toi pour accéder au Roman</p>`}
+    ${isConnected ? `
+      <a href="${fic.link}">Lire le Série</a>
+      <div class="rating" data-title="${fic.title}">
+        ${[1,2,3,4,5].map(i => `<span class="star" data-star="${i}">☆</span>`).join('')}
+      </div>
+    ` : `<p style="color:red;">🔒 Connecte-toi pour accéder au document</p>`}
   `;
 
   zone.appendChild(card);
