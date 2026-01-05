@@ -411,3 +411,11 @@ button:hover {
 .rating .star.active {
   color: orange;
 }
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
