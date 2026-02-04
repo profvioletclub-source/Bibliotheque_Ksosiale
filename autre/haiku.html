@@ -81,5 +81,22 @@
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
+  <script>
+    const select = document.getElementById("chapter-select");
+    const chapters = document.querySelectorAll("section");
+
+    function showChapter(id) {
+      chapters.forEach(ch => ch.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    // Affiche le premier chapitre au chargement
+    showChapter("chap1");
+
+    // Change de chapitre quand on sélectionne dans le menu
+    select.addEventListener("change", () => {
+      showChapter(select.value);
+    });
+  </script>
 </body>
 </html>
