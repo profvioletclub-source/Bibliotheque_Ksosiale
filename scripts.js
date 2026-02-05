@@ -68,12 +68,13 @@ closeBtn.addEventListener("click", () => {
   toggleBtn.style.display = "inline-block";
 });
 
-// 📖 Gestion des chapitres
-const chapterSelect = document.getElementById("chapter-select");
+// Chapitres
+function initChapters() {
+  const chapterSelect = document.getElementById("chapter-select");
+  if (!chapterSelect) return;
 
-if (chapterSelect) {
-  // On récupère tous les chapitres qui ont un id
-  const chapterSections = document.querySelectorAll("section[id]");
+  const chapterSections = document.querySelectorAll("main section[id]");
+  if (chapterSections.length === 0) return;
 
   function showChapter(id) {
     chapterSections.forEach(ch => ch.classList.remove("active"));
@@ -81,14 +82,17 @@ if (chapterSelect) {
     if (target) target.classList.add("active");
   }
 
-  // 👉 Affiche automatiquement le premier chapitre trouvé
-  if (chapterSections.length > 0) {
-    const firstID = chapterSections[0].id;
-    showChapter(firstID);
-  }
+  // Affiche automatiquement le premier chapitre
+  showChapter(chapterSections[0].id);
 
-  // 👉 Change de chapitre quand on sélectionne dans le menu
   chapterSelect.addEventListener("change", () => {
     showChapter(chapterSelect.value);
   });
+}
+
+// 👉 Safari/iPad : DOM peut déjà être prêt AVANT le chargement du script
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initChapters);
+} else {
+  initChapters();
 }
