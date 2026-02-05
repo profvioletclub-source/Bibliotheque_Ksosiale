@@ -68,25 +68,29 @@ closeBtn.addEventListener("click", () => {
   toggleBtn.style.display = "inline-block";
 });
 
-// 📖 Gestion des chapitres (fonction réutilisable)
+// 📖 Affiche un chapitre donné
+function showChapter(id, chapterSections) {
+  chapterSections.forEach(ch => ch.classList.remove("active"));
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add("active");
+  }
+}
+
+// 📖 Initialisation du système de chapitres
 function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  const chapterSections = document.querySelectorAll("section[id]");
+  const chapterSections = Array.from(document.querySelectorAll("section[id]"));
   if (chapterSections.length === 0) return;
+
+  // Affiche le chapitre correspondant à la valeur du select,
+  // ou le premier si jamais
+  const initialId = chapterSelect.value || chapterSections[0].id;
+  showChapter(initialId, chapterSections);
+
+  chapterSelect.addEventListener("change", () => {
+    showChapter(chapterSelect.value, chapterSections);
+  });
 }
-
-function showChapter(id) {
-  chapterSections.forEach(ch => ch.classList.remove("active"));
-  const target = document.getElementById(id);
-  if (target) target.classList.add("active");
-}
-
-// Affiche automatiquement le premier chapitre trouvé
-showChapter(chapterSections[0].id);
-
-// Change de chapitre quand on sélectionne dans le menu
-chapterSelect.addEventListener("change", () => {
-  showChapter(chapterSelect.value);
-})
