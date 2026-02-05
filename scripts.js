@@ -69,28 +69,34 @@ closeBtn.addEventListener("click", () => {
 });
 
 // 📖 Affiche un chapitre donné
-function showChapter(id, chapterSections) {
-  chapterSections.forEach(ch => ch.classList.remove("active"));
+function showChapter(id) {
+  const chapters = document.querySelectorAll("section[id]");
+  chapters.forEach(ch => ch.classList.remove("active"));
+
   const target = document.getElementById(id);
   if (target) {
     target.classList.add("active");
   }
 }
 
-// 📖 Initialisation du système de chapitres
+// 📖 Initialise le système de chapitres
 function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  const chapterSections = Array.from(document.querySelectorAll("section[id]"));
-  if (chapterSections.length === 0) return;
+  // Affiche le chapitre correspondant à la valeur actuelle du select
+  showChapter(chapterSelect.value);
 
-  // Affiche le chapitre correspondant à la valeur du select,
-  // ou le premier si jamais
-  const initialId = chapterSelect.value || chapterSections[0].id;
-  showChapter(initialId, chapterSections);
-
+  // Change de chapitre quand on sélectionne dans le menu
   chapterSelect.addEventListener("change", () => {
-    showChapter(chapterSelect.value, chapterSections);
+    showChapter(chapterSelect.value);
   });
 }
+
+// 🔁 S'assure que initChapters est appelé au bon moment
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initChapters);
+} else {
+  initChapters();
+}
+
