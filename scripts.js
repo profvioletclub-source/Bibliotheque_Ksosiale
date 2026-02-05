@@ -68,12 +68,12 @@ closeBtn.addEventListener("click", () => {
   toggleBtn.style.display = "inline-block";
 });
 
-// Chapitres
+// 📖 Gestion des chapitres (fonction réutilisable)
 function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  const chapterSections = document.querySelectorAll("main section[id]");
+  const chapterSections = document.querySelectorAll("section[id]");
   if (chapterSections.length === 0) return;
 
   function showChapter(id) {
@@ -82,17 +82,11 @@ function initChapters() {
     if (target) target.classList.add("active");
   }
 
-  // Affiche automatiquement le premier chapitre
+  // Affiche automatiquement le premier chapitre trouvé
   showChapter(chapterSections[0].id);
 
+  // Change de chapitre quand on sélectionne dans le menu
   chapterSelect.addEventListener("change", () => {
     showChapter(chapterSelect.value);
   });
-}
-
-// 👉 Safari/iPad : DOM peut déjà être prêt AVANT le chargement du script
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initChapters);
-} else {
-  initChapters();
 }
