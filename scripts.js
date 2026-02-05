@@ -68,11 +68,12 @@ closeBtn.addEventListener("click", () => {
   toggleBtn.style.display = "inline-block";
 });
 
-// 📖 Gestion des chapitres dans les fanfictions
+// 📖 Gestion des chapitres
 const chapterSelect = document.getElementById("chapter-select");
-const chapterSections = document.querySelectorAll("section[id^='chap']");
 
-if (chapterSelect && chapterSections.length > 0) {
+if (chapterSelect) {
+  // On récupère tous les chapitres qui ont un id
+  const chapterSections = document.querySelectorAll("section[id]");
 
   function showChapter(id) {
     chapterSections.forEach(ch => ch.classList.remove("active"));
@@ -80,11 +81,15 @@ if (chapterSelect && chapterSections.length > 0) {
     if (target) target.classList.add("active");
   }
 
-  // Affiche le premier chapitre au chargement
-  showChapter("chap1");
+  // 👉 Affiche automatiquement le premier chapitre trouvé
+  if (chapterSections.length > 0) {
+    const firstID = chapterSections[0].id;
+    showChapter(firstID);
+  }
 
-  // Change de chapitre quand on sélectionne dans le menu
+  // 👉 Change de chapitre quand on sélectionne dans le menu
   chapterSelect.addEventListener("change", () => {
     showChapter(chapterSelect.value);
   });
 }
+
