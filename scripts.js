@@ -69,11 +69,10 @@ closeBtn.addEventListener("click", () => {
 });
 
 // 📖 Gestion des chapitres
-window.addEventListener("DOMContentLoaded", () => {
-  const chapterSelect = document.getElementById("chapter-select");
+const chapterSelect = document.getElementById("chapter-select");
 
-  if (!chapterSelect) return;
-
+if (chapterSelect) {
+  // On récupère tous les chapitres qui ont un id
   const chapterSections = document.querySelectorAll("section[id]");
 
   function showChapter(id) {
@@ -92,4 +91,4 @@ window.addEventListener("DOMContentLoaded", () => {
   chapterSelect.addEventListener("change", () => {
     showChapter(chapterSelect.value);
   });
-});
+}
