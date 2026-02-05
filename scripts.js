@@ -67,3 +67,24 @@ closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("open");
   toggleBtn.style.display = "inline-block";
 });
+
+// 📖 Gestion des chapitres dans les fanfictions
+const chapterSelect = document.getElementById("chapter-select");
+const chapterSections = document.querySelectorAll("section[id^='chap']");
+
+if (chapterSelect && chapterSections.length > 0) {
+
+  function showChapter(id) {
+    chapterSections.forEach(ch => ch.classList.remove("active"));
+    const target = document.getElementById(id);
+    if (target) target.classList.add("active");
+  }
+
+  // Affiche le premier chapitre au chargement
+  showChapter("chap1");
+
+  // Change de chapitre quand on sélectionne dans le menu
+  chapterSelect.addEventListener("change", () => {
+    showChapter(chapterSelect.value);
+  });
+}
