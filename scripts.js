@@ -76,17 +76,17 @@ function initChapters() {
   const chapterSections = document.querySelectorAll("section[id]");
   if (chapterSections.length === 0) return;
 
-  function showChapter(id) {
-    chapterSections.forEach(ch => ch.classList.remove("active"));
-    const target = document.getElementById(id);
-    if (target) target.classList.add("active");
-  }
+function showChapter(id) {
+  chapterSections.forEach(ch => ch.classList.remove("active"));
+  const target = document.getElementById(id);
+  if (target) target.classList.add("active");
+}
 
-  // Affiche automatiquement le premier chapitre trouvé
-  showChapter(chapterSections[0].id);
+// Affiche automatiquement le premier chapitre trouvé
+showChapter(chapterSections[0].id);
 
-  // Change de chapitre quand on sélectionne dans le menu
-  chapterSelect.addEventListener("change", () => {
-    showChapter(chapterSelect.value);
-  });
+// Change de chapitre quand on sélectionne dans le menu
+chapterSelect.addEventListener("change", () => {
+  showChapter(chapterSelect.value);
+});
 }
