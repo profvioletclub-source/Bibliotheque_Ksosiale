@@ -75,6 +75,7 @@ function initChapters() {
 
   const chapterSections = document.querySelectorAll("section[id]");
   if (chapterSections.length === 0) return;
+}
 
 function showChapter(id) {
   chapterSections.forEach(ch => ch.classList.remove("active"));
@@ -88,5 +89,4 @@ showChapter(chapterSections[0].id);
 // Change de chapitre quand on sélectionne dans le menu
 chapterSelect.addEventListener("change", () => {
   showChapter(chapterSelect.value);
-});
-}
+})
