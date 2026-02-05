@@ -504,23 +504,7 @@ Les Ksos 6.0 ne seraient plus jamais les mêmes.</p>
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
-  <script>
-    const select = document.getElementById("chapter-select");
-    const chapters = document.querySelectorAll("section");
-
-    function showChapter(id) {
-      chapters.forEach(ch => ch.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-
-    // Affiche le premier chapitre au chargement
-    showChapter("intro");
-
-    // Change de chapitre quand on sélectionne dans le menu
-    select.addEventListener("change", () => {
-      showChapter(select.value);
-    });
-  </script>
+  <script src="script.js"></script>
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
