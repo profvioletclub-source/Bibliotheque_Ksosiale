@@ -1,3 +1,5 @@
+alert("Chapitres trouvés : " + document.querySelectorAll("section[id]").length);
+
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
@@ -100,5 +102,3 @@ function initChapters() {
 
 // Le script est en bas du body → on peut appeler directement
 initChapters();
-
-alert("Chapitres trouvés : " + document.querySelectorAll("section[id]").length);
