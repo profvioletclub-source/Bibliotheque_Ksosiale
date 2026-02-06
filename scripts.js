@@ -1,3 +1,5 @@
+alert("JS chargé");
+
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
