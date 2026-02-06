@@ -72,7 +72,7 @@ closeBtn.addEventListener("click", () => {
 
 // 📖 Affiche un chapitre donné
 function showChapter(id) {
-  const chapters = document.querySelectorAll("section[id]");
+  const chapters = document.querySelectorAll("main section[id]");
   chapters.forEach(ch => ch.classList.remove("active"));
 
   const target = document.getElementById(id);
@@ -86,19 +86,19 @@ function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  // Affiche le chapitre correspondant à la valeur actuelle du select
-  showChapter(chapterSelect.value);
+  const chapters = Array.from(document.querySelectorAll("main section[id]"));
+  if (chapters.length === 0) return;
 
-  // Change de chapitre quand on sélectionne dans le menu
+  // 👉 On ignore la valeur du select au chargement
+  // On affiche TOUJOURS le premier chapitre
+  const firstId = chapters[0].id;
+  showChapter(firstId);
+
+  // 👉 Quand l’utilisateur change le select, là on suit sa valeur
   chapterSelect.addEventListener("change", () => {
     showChapter(chapterSelect.value);
   });
 }
 
-// 🔁 S'assure que initChapters est appelé au bon moment
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initChapters);
-} else {
-  initChapters();
-}
-
+// Le script est en bas du body → on peut appeler directement
+initChapters();
