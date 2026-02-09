@@ -11,11 +11,17 @@ const auteurNom = nomFichier
   .trim()
   .toUpperCase(); // "ANTHONY RAVE"
 
-// 🔍 Filtre : l'auteur de la page doit apparaître dans la liste des auteurs du texte
+// 🔍 Filtre les textes
 const textes = ficCards.filter(fic => {
   const auteurFic = fic.author.trim().toUpperCase();
   return auteurFic.includes(auteurNom);
 });
+
+// 🔔 DIAGNOSTIC
+alert(
+  "Auteur détecté : " + auteurNom +
+  "\nTextes trouvés : " + textes.length
+);
 
 // 📝 Affichage
 textes.forEach(fic => {
