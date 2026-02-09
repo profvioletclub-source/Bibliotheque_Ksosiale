@@ -105,7 +105,7 @@ export const ficCards = [
   },
   {
     title:"Programme - UnFra (Version du 25 mars 2025)",
-    author: "Mewenn RODET",
+    author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
     type: "other",
     description: "Analyses et théories politiques",
