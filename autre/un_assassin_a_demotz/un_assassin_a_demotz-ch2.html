@@ -13,42 +13,32 @@
     <label for="chapitre-select">📚 Accéder à un chapitre :</label>
     <select id="chapitre-select">
       <option value="">-- Choisir un chapitre --</option>
-      <option value="../../serie.html">← Retour aux Séries</option>
+      <option value="../../series.html">← Retour aux Séries</option>
       <option value="un_assassin_a_demotz-ch1.html">Chapitre 1</option>
       <option value="le_retournement_de_situation.html">Le Retournement de Situation</option>
     </select>
   </header>
 
   <main>
-    <section>
-      <p>« Bonjour à tous et à toutes, ai-je déclaré lors de la réunion. Si je vous ai réuni aujourd'hui ici même dans ce cadre de réunion, c'est que nous avons affaire à un crime d'alerte 10 sur 10. Hier, M. Chihab, M. Praz, Mme Petit ainsi que Mme Chameaux-Cottin ont été assassinés dans l'établissement. Nous avons cinq suspects potentiels : Mme Chambert, Terry, Maëlis, Mme Gallet et M. Lalanne. »</p>
+    <p>« Bonjour à tous et à toutes, ai-je déclaré lors de la réunion. Si je vous ai réuni aujourd'hui ici même dans ce cadre de réunion, c'est que nous avons affaire à un crime d'alerte 10 sur 10. Hier, M. Chihab, M. Praz, Mme Petit ainsi que Mme Chameaux-Cottin ont été assassinés dans l'établissement. Nous avons cinq suspects potentiels : Mme Chambert, Terry, Maëlis, Mme Gallet et M. Lalanne. »</p>
 
-      <p>« Est-ce qu'il y a des indices ? » demanda-tu.</p>
-      <p>« Oui, ils sont tous décédés dans la salle des professeurs, étranglés avec un haltère. »</p>
-      <p>« D'où vient cette corde ? » demandais-tu.</p>
-      <p>« Les analyses de la corde montrent qu'elle provient du gymnase. »</p>
-      <p>« D'accord, je sais qui est le coupable. » déclara-tu.</p>
-      <p>« Quelle est la réponse ? » ai-je demandé.</p>
-      <p>« Le coupable ne peut pas être un élève car ils n'ont pas accès à la salle des professeurs. Seuls un professeur de sport et des élèves ont accès au gymnase. Par déduction, il ne reste que M. Lalanne. De plus, il a déjà été coupable. »</p>
+    <p>« Est-ce qu'il y a des indices ? » demanda-tu.</p>
+    <p>« Oui, ils sont tous décédés dans la salle des professeurs, étranglés avec un haltère. »</p>
+    <p>« D'où vient cette corde ? » demandais-tu.</p>
+    <p>« Les analyses de la corde montrent qu'elle provient du gymnase. »</p>
+    <p>« D'accord, je sais qui est le coupable. » déclara-tu.</p>
+    <p>« Quelle est la réponse ? » ai-je demandé.</p>
+    <p>« Le coupable ne peut pas être un élève car ils n'ont pas accès à la salle des professeurs. Seuls un professeur de sport et des élèves ont accès au gymnase. Par déduction, il ne reste que M. Lalanne. De plus, il a déjà été coupable. »</p>
 
-      <p>« Félicitations, » déclara M. Lalanne en arrivant. « Aujourd'hui, vous êtes des hommes morts, » continua-t-il.</p>
-      <p>« Je ne crois pas, » répondis-tu.</p>
-      <p>« Ah bon, pourquoi donc ? »</p>
-      <p>« Car vous êtes renvoyé, » annonça Mme Chambert. « Votre comportement est intolérable. Je vous avais pourtant interdit de revenir ! »</p>
-    </section>
+    <p>« Félicitations, » déclara M. Lalanne en arrivant. « Aujourd'hui, vous êtes des hommes morts, » continua-t-il.</p>
+    <p>« Je ne crois pas, » répondis-tu.</p>
+    <p>« Ah bon, pourquoi donc ? »</p>
+    <p>« Car vous êtes renvoyé, » annonça Mme Chambert. « Votre comportement est intolérable. Je vous avais pourtant interdit de revenir ! »</p>
   </main>
 
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
-  <script>
-    const select = document.getElementById("chapitre-select");
-    select.addEventListener("change", function () {
-      const url = this.value;
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  </script>
+  <script src="../scripts.js"></script>
 </body>
 </html>
