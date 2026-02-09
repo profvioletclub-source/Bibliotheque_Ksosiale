@@ -12,7 +12,7 @@
     <label for="chapitre-select">📚 Accéder à un chapitre :</label>
     <select id="chapitre-select">
       <option value="">-- Choisir un chapitre --</option>
-      <option value="../../serie.html">← Retour aux Séries</option>
+      <option value="../../series.html">← Retour aux Séries</option>
       <option value="un_assassin_a_demotz-ch2.html">Un Assassin à Démotz</option>
       <option value="../la_lignee_des_profs/5_chambert_presidente.html">La Lignée des Profs</option>
       <option value="../le_combot_des_profs/1_meurtre_a_rome.html">Le Combot des Profs</option>
@@ -20,23 +20,13 @@
   </header>
 
   <main>
-    <section>
-      <p>« Mesdames Roig, Gallet, Singer et Mortaro, j'ai réemployé Monsieur Lalanne. Il fera partie de notre groupe. »</p>
-      <p><strong>Suite dans : La Lignée des Profs</strong></p>
-    </section>
+    <p>« Mesdames Roig, Gallet, Singer et Mortaro, j'ai réemployé Monsieur Lalanne. Il fera partie de notre groupe. »</p>
+    <p><strong>Suite dans : La Lignée des Profs</strong></p>
   </main>
 
   <footer>
     <p>© Ksos - Tous droits réservés</p>
   </footer>
-  <script>
-    const select = document.getElementById("chapitre-select");
-    select.addEventListener("change", function () {
-      const url = this.value;
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  </script>
+  <script src="../scripts.js"></script>
 </body>
 </html>
