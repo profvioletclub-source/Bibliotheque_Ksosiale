@@ -14,36 +14,26 @@
     <label for="chapitre-select">📚 Accéder à un chapitre :</label>
     <select id="chapitre-select">
       <option value="">-- Choisir un épisode --</option>
-      <option value="../../serie.html">← Retour aux Séries</option>
+      <option value="../../series.html">← Retour aux Séries</option>
       <option value="2_la_bague_d_emmanuel_macron.html">2 - La Bague d'Emmanuel Macron</option>
       <option value="3_le_pendentif_d_Elizabeth_II.html">3 - Le Pendentif d'Elizabeth II</option>
     </select>
   </header>
 
   <main>
-    <section>
-      <p>Vendredi 13 novembre 2026</p>
-      <p>Durant la troisième guerre mondiale.</p>
-      <quitenote>« Mes chers compatriotes, nous sommes en guerre contre les chinois. »</quitenote>
-      <p>De partout dans le monde et dans toutes les langues résonnait ce même message.</p>
-      <p>Chaque président confinait ses compatriotes. Les chinois, qui n’avaient pas tant de puissances que leurs adversaires, vont tenter de résister.</p>
+    <p>Vendredi 13 novembre 2026</p>
+    <p>Durant la troisième guerre mondiale.</p>
+    <quitenote>« Mes chers compatriotes, nous sommes en guerre contre les chinois. »</quitenote>
+    <p>De partout dans le monde et dans toutes les langues résonnait ce même message.</p>
+    <p>Chaque président confinait ses compatriotes. Les chinois, qui n’avaient pas tant de puissances que leurs adversaires, vont tenter de résister.</p>
 
-      <p>Angela Merkel contait lutter avec le pouvoir de son collier qui lui permettait d’être très puissant. Son pouvoir était la lévitation : elle pouvait l’utiliser pour déplacer tous les objets souhaités.</p>
-    </section>
+    <p>Angela Merkel contait lutter avec le pouvoir de son collier qui lui permettait d’être très puissant. Son pouvoir était la lévitation : elle pouvait l’utiliser pour déplacer tous les objets souhaités.</p>
   </main>
 
   <footer>
     <p>© Ksos - Tous droits réservés</p>
     <p>Les fautes d'orthographes sont celle du manuscrit du 12 avril 2021.</p>
   </footer>
-  <script>
-    const select = document.getElementById("chapitre-select");
-    select.addEventListener("change", function () {
-      const url = this.value;
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  </script>
+  <script src="../scripts.js"></script>
 </body>
 </html>
