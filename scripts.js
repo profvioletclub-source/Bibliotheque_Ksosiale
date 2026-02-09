@@ -102,3 +102,26 @@ function initChapters() {
 
 // Le script est en bas du body → on peut appeler directement
 initChapters();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chapterSelect = document.getElementById("chapter-select");
+  const chapters = document.querySelectorAll("section[id]");
+
+  alert("Select trouvé : " + !!chapterSelect);
+  alert("Chapitres trouvés : " + chapters.length);
+
+  if (!chapterSelect || chapters.length === 0) return;
+
+  function showChapter(id) {
+    chapters.forEach(ch => ch.classList.remove("active"));
+    const target = document.getElementById(id);
+    if (target) target.classList.add("active");
+  }
+
+  // Affiche le premier chapitre
+  showChapter(chapters[0].id);
+
+  chapterSelect.addEventListener("change", () => {
+    showChapter(chapterSelect.value);
+  });
+});
