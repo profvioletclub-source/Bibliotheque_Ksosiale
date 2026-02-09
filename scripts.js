@@ -72,7 +72,7 @@ closeBtn.addEventListener("click", () => {
 
 // 📖 Affiche un chapitre donné
 function showChapter(id) {
-  const chapters = document.querySelectorAll("main section[id]");
+  const chapters = document.querySelectorAll("section[id]");
   chapters.forEach(ch => ch.classList.remove("active"));
 
   const target = document.getElementById(id);
@@ -86,7 +86,7 @@ function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  const chapters = Array.from(document.querySelectorAll("main section[id]"));
+  const chapters = Array.from(document.querySelectorAll("section[id]"));
   if (chapters.length === 0) return;
 
   // Affiche le premier chapitre
