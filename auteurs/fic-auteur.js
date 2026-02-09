@@ -1,6 +1,7 @@
 import { ficCards } from "../fic-data.js";
 
 const zone = document.getElementById("textes-auteur");
+alert("Zone trouvée : " + !!zone);
 
 // 🔍 Récupère le nom de l'auteur depuis le nom du fichier HTML
 const path = window.location.pathname;
