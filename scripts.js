@@ -1,8 +1,3 @@
-alert("JS chargé");
-alert("Select existe : " + !!document.getElementById("chapter-select"));
-alert("Chapitres trouvés : " + document.querySelectorAll("section[id]").length);
-
-
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
