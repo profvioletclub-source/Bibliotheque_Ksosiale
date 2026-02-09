@@ -1,3 +1,5 @@
+alert("Select trouvé : " + !!document.getElementById("chapter-select"));
+
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
