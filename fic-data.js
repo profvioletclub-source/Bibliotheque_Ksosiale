@@ -1,7 +1,7 @@
 export const ficCards = [
   {
     title:"Haïku",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-09-10",
     type: "other",
     description: "Poèmes courts",
@@ -9,7 +9,7 @@ export const ficCards = [
   },
   {
     title:"Ksos 5.0 : Meurtre en Haute-Savoie",
-    author: "COPILOT",
+    author: "Copilot",
     date: "2025-09-09",
     type: "fanfiction",
     description: "Quand les Ksos font face à la mort... 🔪",
@@ -17,7 +17,7 @@ export const ficCards = [
   },
   {
     title:"Ksos 6.0 : Le Pacte des Cendres",
-    author: "COPILOT",
+    author: "Copilot",
     date: "2025-09-12",
     type: "fanfiction",
     description: "Un an après le meurtre de Jules... 🔪",
@@ -25,7 +25,7 @@ export const ficCards = [
   },
   {
     title:"La Lignée des Profs",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-09-17",
     type: "serie",
     description: "Quelles histoires les profs ont-ils vécuent ?",
@@ -33,7 +33,7 @@ export const ficCards = [
   },
   {
     title:"L'Affaire Willweston",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-01",
     type: "roman",
     description: "Madame Willweston est mystérieusement assassinée... Andrew, notre enquêteur, va-t-il trouver le coupable ?",
@@ -41,7 +41,7 @@ export const ficCards = [
   },
   {
     title:"Le Combot des Profs",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-12",
     type: "serie",
     description: "Les Profs n'ont pas cessé d'agir...",
@@ -49,7 +49,7 @@ export const ficCards = [
   },
   {
     title:"Le Monstre du Marais",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-13",
     type: "other",
     description: "Une Nouvelle d'Horreur...",
@@ -57,7 +57,7 @@ export const ficCards = [
   },
   {
     title:"Le Retour des Pokemons",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-13",
     type: "serie",
     description: "Quand les Pokemons apparaissent en Haute-Savoie...",
@@ -65,7 +65,7 @@ export const ficCards = [
   },
   {
     title:"Les Président(e)s en force",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-09-17",
     type: "serie",
     description: "Les Président(e)s comptent sur l'aide deleurs bijoux...",
@@ -73,7 +73,7 @@ export const ficCards = [
   },
   {
     title: "Meurtre au Collège",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-13",
     type: "roman",
     description: "Quand le collège fait face à la mort, une enquête débute...",
@@ -81,7 +81,7 @@ export const ficCards = [
   },
   {
     title:"Or jaune, noir, bleu, quelle différence ?",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-09-18",
     type: "docu",
     description: "Quelle est la différence entre les différents types d'or ?",
@@ -89,7 +89,7 @@ export const ficCards = [
   },
 //  {
 //    title:"Pneumasis",
-//    author: "ANTHONY RAVE",
+//    author: "Anthony RAVE",
 //    date: "2026-01-01",
 //    type: "roman",
 //    description: "À venir",
@@ -97,7 +97,7 @@ export const ficCards = [
 //  },
   {
     title:"Poutine, 22 ans de règne et un pouvoir infini",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-11",
     type: "docu",
     description: "Au lendemain du début de l''Opération spéciale' en Ukraine, nous faisons le point",
@@ -105,7 +105,7 @@ export const ficCards = [
   },
   {
     title:"Programme - UnFra (Version du 25 mars 2025)",
-    author: "ANTHONY RAVE & MEWENN RODET",
+    author: "Anthony RAVE et Mewenn RODET",
     date: "2025-09-10",
     type: "other",
     description: "Analyses et théories politiques",
@@ -113,7 +113,7 @@ export const ficCards = [
   },
   {
     title:"Trump, le président qui tweet plus vite que son ombre",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-01",
     type: "docu",
     description: "Trump et Tweeter, une relation des plus intrigantes...",
@@ -121,7 +121,7 @@ export const ficCards = [
   },
   {
     title:"Un Assassin à Démotz",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-12",
     type: "serie",
     description: "Quand un meurtre à lieu au collège...",
@@ -129,7 +129,7 @@ export const ficCards = [
   },
   {
     title:"Une Idylle Scolaire",
-    author: "ANTHONY RAVE",
+    author: "Anthony RAVE",
     date: "2025-10-12",
     type: "roman",
     description: "Quand un mauvais élève doit suivre des cours privé pour finir l'année...",
