@@ -1,5 +1,3 @@
-alert("Select trouvé : " + !!document.getElementById("chapter-select"));
-
 // 🔍 Recherche avancée
 const searchBar = document.getElementById("search-bar");
 const searchAuthor = document.getElementById("search-author");
@@ -9,7 +7,7 @@ const searchButton = document.getElementById("search-button");
 
 if (searchButton) {
   searchButton.addEventListener("click", (e) => {
-    e.preventDefault(); // évite le comportement par défaut du lien
+    e.preventDefault();
 
     const query = {
       title: searchBar?.value.trim() || "",
@@ -18,61 +16,52 @@ if (searchButton) {
       type: searchType?.value || ""
     };
 
-    // 🔍 Log pour test visuel (optionnel sur iPad)
-    console.log("🔍 Requête enregistrée :", query);
-
     localStorage.setItem("ksos_search", JSON.stringify(query));
     window.location.href = "recherche.html";
   });
 }
 
-// 🪟 Popup d’accueil
+// 🪟 Popup d’accueil + pseudo
 window.addEventListener("load", () => {
   const popup = document.getElementById("popup-overlay");
-  const closeBtn = document.getElementById("close-popup");
+  const closePopup = document.getElementById("close-popup");
 
-  if (!sessionStorage.getItem("popupShown") && popup && closeBtn) {
+  if (!sessionStorage.getItem("popupShown") && popup && closePopup) {
     popup.style.display = "flex";
     sessionStorage.setItem("popupShown", "true");
 
-    closeBtn.addEventListener("click", () => {
+    closePopup.addEventListener("click", () => {
       popup.style.display = "none";
     });
   }
-  // 👤 Affichage du pseudo utilisateur connecté sans modifier le lien
+
   const userAccess = document.getElementById("user-access");
   const pseudo = localStorage.getItem("ksosPseudo");
-
   if (userAccess && pseudo) {
     userAccess.textContent = pseudo;
   }
 });
 
+// 🧭 Sidebar (sécurisé)
 const toggleBtn = document.getElementById("sidebar-toggle");
 const sidebar = document.getElementById("sidebar");
 const closeBtn = document.getElementById("close-sidebar");
 
-toggleBtn.addEventListener("click", () => {
-  sidebar.classList.add("open");
-});
+if (toggleBtn && sidebar && closeBtn) {
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.add("open");
+    toggleBtn.style.display = "none";
+  });
 
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-});
-
-toggleBtn.addEventListener("click", () => {
-  sidebar.classList.add("open");
-  toggleBtn.style.display = "none";
-});
-
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-  toggleBtn.style.display = "inline-block";
-});
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    toggleBtn.style.display = "inline-block";
+  });
+}
 
 // 📖 Affiche un chapitre donné
 function showChapter(id) {
-  const chapters = document.querySelectorAll("section[id]");
+  const chapters = document.querySelectorAll("main section[id]");
   chapters.forEach(ch => ch.classList.remove("active"));
 
   const target = document.getElementById(id);
@@ -86,7 +75,7 @@ function initChapters() {
   const chapterSelect = document.getElementById("chapter-select");
   if (!chapterSelect) return;
 
-  const chapters = Array.from(document.querySelectorAll("section[id]"));
+  const chapters = Array.from(document.querySelectorAll("main section[id]"));
   if (chapters.length === 0) return;
 
   // Affiche le premier chapitre
@@ -98,5 +87,5 @@ function initChapters() {
   });
 }
 
-// 👉 On attend que le DOM soit prêt
+// 👉 Quand le DOM est prêt, on lance les chapitres
 document.addEventListener("DOMContentLoaded", initChapters);
