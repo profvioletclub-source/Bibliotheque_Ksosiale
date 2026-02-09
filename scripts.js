@@ -89,3 +89,15 @@ function initChapters() {
 
 // 👉 Quand le DOM est prêt, on lance les chapitres
 document.addEventListener("DOMContentLoaded", initChapters);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chapitreSelect = document.getElementById("chapitre-select");
+  if (!chapitreSelect) return;
+
+  chapitreSelect.addEventListener("change", () => {
+    const url = chapitreSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
+});
