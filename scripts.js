@@ -90,13 +90,14 @@ function initChapters() {
 // 👉 Quand le DOM est prêt, on lance les chapitres
 document.addEventListener("DOMContentLoaded", initChapters);
 
+// 🌐 Navigation entre pages (chapitres répartis sur plusieurs fichiers)
 document.addEventListener("DOMContentLoaded", () => {
-  const chapitreSelect = document.getElementById("chapitre-select");
-  if (!chapitreSelect) return;
+  const pageSelect = document.getElementById("chapitre-select");
+  if (!pageSelect) return;
 
-  chapitreSelect.addEventListener("change", () => {
-    const url = chapitreSelect.value;
-    if (url) {
+  pageSelect.addEventListener("change", () => {
+    const url = pageSelect.value;
+    if (url && url.trim() !== "") {
       window.location.href = url;
     }
   });
