@@ -21,6 +21,9 @@ filtered.forEach(fic => {
     <p>${fic.description}</p>
     ${isConnected ? `
       <a href="${fic.link}">Lire le Texte</a>
+      <div class="rating" data-title="${fic.title}">
+        ${[1,2,3,4,5].map(i => `<span class="star" data-star="${i}">☆</span>`).join('')}
+      </div>
     ` : `<p style="color:red;">🔒 Connecte-toi pour accéder au document</p>`}
   `;
 
